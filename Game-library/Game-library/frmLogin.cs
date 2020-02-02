@@ -17,6 +17,8 @@ namespace Game_library
             InitializeComponent();
         }
 
+        #region Events
+
         private void textLogin_Click(object sender, EventArgs e)
         {
             if (textLogin.Text == "Username")
@@ -26,6 +28,14 @@ namespace Game_library
             
 
             panel1.BackColor = Color.FromArgb(0, 210, 65);
+        }
+
+        private void textLogin_Leave(object sender, EventArgs e)
+        {
+            if (textLogin.Text == "")
+            {
+                textLogin.Text = "Username";
+            }
         }
 
         private void textPasswd_Click(object sender, EventArgs e)
@@ -41,6 +51,16 @@ namespace Game_library
             textPasswd.UseSystemPasswordChar = true;
         }
 
+        private void textPasswd_Leave(object sender, EventArgs e)
+        {
+            if (textPasswd.Text == "")
+            {
+                textPasswd.Text = "Password";
+                textPasswd.UseSystemPasswordChar = false;
+
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (textLogin.Text == "erykluizvieira@gmail.com" && textPasswd.Text == "emilly0312")
@@ -52,5 +72,10 @@ namespace Game_library
                 MessageBox.Show("Usuário Incorreto ou Não existe");
             }
         }
+
+        #endregion
+
+
+
     }
 }

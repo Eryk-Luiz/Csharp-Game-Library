@@ -51,6 +51,7 @@
             this.textLogin.TabStop = false;
             this.textLogin.Text = "Username";
             this.textLogin.Click += new System.EventHandler(this.textLogin_Click);
+            this.textLogin.Leave += new System.EventHandler(this.textLogin_Leave);
             // 
             // panel1
             // 
@@ -74,6 +75,7 @@
             this.textPasswd.TabStop = false;
             this.textPasswd.Text = "Password";
             this.textPasswd.Click += new System.EventHandler(this.textPasswd_Click);
+            this.textPasswd.Leave += new System.EventHandler(this.textPasswd_Leave);
             // 
             // btnLogin
             // 
