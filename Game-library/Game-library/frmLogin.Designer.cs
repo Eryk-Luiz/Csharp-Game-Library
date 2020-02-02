@@ -95,6 +95,7 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.TextColor = System.Drawing.Color.White;
             this.btnLogin.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCadastrar
             // 
@@ -140,7 +141,6 @@
             this.xuiCustomPictureBox1.Name = "xuiCustomPictureBox1";
             this.xuiCustomPictureBox1.Size = new System.Drawing.Size(237, 122);
             this.xuiCustomPictureBox1.TabIndex = 0;
-            this.xuiCustomPictureBox1.Text = "LogoIMG";
             // 
             // frmLogin
             // 
@@ -158,6 +158,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -41,6 +41,16 @@ namespace Game_library
             textPasswd.UseSystemPasswordChar = true;
         }
 
-        
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (textLogin.Text == "erykluizvieira@gmail.com" && textPasswd.Text == "emilly0312")
+            {
+                MessageBox.Show("Usuário Logado");
+            }
+            else
+            {
+                MessageBox.Show("Usuário Incorreto ou Não existe");
+            }
+        }
     }
 }
