@@ -16,5 +16,31 @@ namespace Game_library
         {
             InitializeComponent();
         }
+
+        private void textLogin_Click(object sender, EventArgs e)
+        {
+            if (textLogin.Text == "Username")
+            {
+                textLogin.Clear();
+            }
+            
+
+            panel1.BackColor = Color.FromArgb(0, 210, 65);
+        }
+
+        private void textPasswd_Click(object sender, EventArgs e)
+        {
+            if (textPasswd.Text == "Password")
+            {
+                textPasswd.Clear();
+            }
+            
+
+            panel2.BackColor = Color.FromArgb(0, 210, 65);
+
+            textPasswd.UseSystemPasswordChar = true;
+        }
+
+        
     }
 }
