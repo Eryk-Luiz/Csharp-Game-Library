@@ -35,6 +35,7 @@ namespace Game_library
             if (textLogin.Text == "")
             {
                 textLogin.Text = "Username";
+                panel1.BackColor = Color.White;
             }
         }
 
@@ -57,6 +58,7 @@ namespace Game_library
             {
                 textPasswd.Text = "Password";
                 textPasswd.UseSystemPasswordChar = false;
+                panel2.BackColor = Color.White;
 
             }
         }
