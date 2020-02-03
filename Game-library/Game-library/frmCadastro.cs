@@ -26,10 +26,16 @@ namespace Game_library
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-            if (textNewPasswd.Text == textConfirmPasswd.Text)
+            if (textNewPasswd.Text != textConfirmPasswd.Text)
+            {
+                
+                MessageBox.Show("As Senhas devem ser iguais!");
+            }
+            else
             {
                 InsertUser();
                 MessageBox.Show("Usuário Cadastrado com Sucesso");
+                this.Close();
             }
         }
 
