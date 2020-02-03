@@ -128,7 +128,7 @@ namespace Game_library
 
                 SqlCeCommand sqlCmd = new SqlCeCommand(query, connection);
                 sqlCmd.ExecuteNonQuery();
-                //close connectio/command
+                //close connection/command
 
                 sqlCmd.Dispose();
                 connection.Close();

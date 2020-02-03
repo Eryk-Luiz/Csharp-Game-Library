@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlServerCe;
 
 namespace Game_library
 {
@@ -61,26 +62,8 @@ namespace Game_library
                 panel2.BackColor = Color.White;
 
             }
-        }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            if (textLogin.Text == "erykluizvieira@gmail.com" && textPasswd.Text == "emilly0312")
-            {
-                MessageBox.Show("Usuário Logado");
-            }
-            else
-            {
-                MessageBox.Show("Usuário Incorreto ou Não existe");
-            }
-        }
-
-        #endregion
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            label1.Text = CreateDataBase.version;
-            label1.ForeColor = Color.FromArgb(0, 210, 65);
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -88,5 +71,80 @@ namespace Game_library
             frmCadastro cadastro = new frmCadastro();
             cadastro.ShowDialog();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (textLogin.Text == "Username")
+            {
+                MessageBox.Show("Preencha os Campos");
+            }
+            else if (textPasswd.Text == "Password") 
+            {
+                MessageBox.Show("Campo de senha Vazio");
+            }
+            else
+            {
+                VerifyUser();
+            }
+            
+            
+
+        }
+
+        #endregion
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            CreateDataBase.CreateDataDirectory();
+            label1.Text = CreateDataBase.version;
+            label1.ForeColor = Color.FromArgb(0, 210, 65);
+        }
+
+
+        public void VerifyUser()
+        {
+
+            try
+            {
+                SqlCeConnection connection = new SqlCeConnection("Data Source = " + CreateDataBase.conString);
+                connection.Open();
+
+                DataTable table = new DataTable();
+
+                string query = "SELECT USER_NAME, PASSWORD FROM Users WHERE USER_NAME =" + "'" + textLogin.Text + "'" + "OR PASSWORD = '" + textPasswd.Text + "'";
+
+                SqlCeDataAdapter command = new SqlCeDataAdapter(query, connection);
+                command.Fill(table);
+
+                command.Dispose();
+                connection.Close();
+
+                if (table.Rows.Count == 0)
+                {
+                    MessageBox.Show("Usuário não encontrado");
+                }
+                else
+                {
+                    string user = table.Rows[0]["USER_NAME"].ToString();
+                    string pass = table.Rows[0]["PASSWORD"].ToString();
+
+                    if (textLogin.Text == user && textPasswd.Text == pass)
+                    {
+                        MessageBox.Show("Logou");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário ou senha incorretos");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERRO DO SISTEMA");
+            }
+
+        }
+
+        
     }
 }
