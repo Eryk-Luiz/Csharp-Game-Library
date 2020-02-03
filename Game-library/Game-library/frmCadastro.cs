@@ -26,11 +26,20 @@ namespace Game_library
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-            if (textNewPasswd.Text != textConfirmPasswd.Text)
+            if (textNewUser.Text == "Username" && textNewPasswd.Text == "Password" && textConfirmPasswd.Text == "Confirm Password") 
+            {
+                MessageBox.Show("Os Campos estão Vazios");
+            }
+            else if (textNewUser.Text == "Username" || textNewPasswd.Text == "Password" || textConfirmPasswd.Text == "Confirm Password")
+            {
+                MessageBox.Show("Preencha todos os Campos");
+            }
+            else if (textNewPasswd.Text != textConfirmPasswd.Text)
             {
                 
                 MessageBox.Show("As Senhas devem ser iguais!");
             }
+            
             else
             {
                 InsertUser();

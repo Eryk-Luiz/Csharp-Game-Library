@@ -36,6 +36,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.xuiCustomPictureBox1 = new XanderUI.XUICustomPictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textLogin
@@ -45,7 +46,7 @@
             this.textLogin.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textLogin.ForeColor = System.Drawing.Color.White;
             this.textLogin.HideSelection = false;
-            this.textLogin.Location = new System.Drawing.Point(49, 150);
+            this.textLogin.Location = new System.Drawing.Point(49, 124);
             this.textLogin.Name = "textLogin";
             this.textLogin.Size = new System.Drawing.Size(242, 19);
             this.textLogin.TabIndex = 1;
@@ -57,7 +58,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(49, 175);
+            this.panel1.Location = new System.Drawing.Point(49, 149);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 2);
             this.panel1.TabIndex = 2;
@@ -69,7 +70,7 @@
             this.textPasswd.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPasswd.ForeColor = System.Drawing.Color.White;
             this.textPasswd.HideSelection = false;
-            this.textPasswd.Location = new System.Drawing.Point(49, 217);
+            this.textPasswd.Location = new System.Drawing.Point(49, 191);
             this.textPasswd.Name = "textPasswd";
             this.textPasswd.Size = new System.Drawing.Size(242, 19);
             this.textPasswd.TabIndex = 3;
@@ -125,25 +126,26 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(49, 242);
+            this.panel2.Location = new System.Drawing.Point(49, 216);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 2);
             this.panel2.TabIndex = 3;
             // 
             // xuiCustomPictureBox1
             // 
+            this.xuiCustomPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.xuiCustomPictureBox1.BackgroundImage = global::Game_library.Properties.Resources.Logo;
             this.xuiCustomPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.xuiCustomPictureBox1.Color1 = System.Drawing.Color.DodgerBlue;
-            this.xuiCustomPictureBox1.Color2 = System.Drawing.Color.DodgerBlue;
+            this.xuiCustomPictureBox1.Color1 = System.Drawing.Color.Transparent;
+            this.xuiCustomPictureBox1.Color2 = System.Drawing.Color.Transparent;
             this.xuiCustomPictureBox1.FilterAlpha = 200;
             this.xuiCustomPictureBox1.FilterEnabled = true;
             this.xuiCustomPictureBox1.Image = null;
             this.xuiCustomPictureBox1.IsElipse = false;
             this.xuiCustomPictureBox1.IsParallax = false;
-            this.xuiCustomPictureBox1.Location = new System.Drawing.Point(54, 12);
+            this.xuiCustomPictureBox1.Location = new System.Drawing.Point(56, 3);
             this.xuiCustomPictureBox1.Name = "xuiCustomPictureBox1";
-            this.xuiCustomPictureBox1.Size = new System.Drawing.Size(237, 122);
+            this.xuiCustomPictureBox1.Size = new System.Drawing.Size(237, 115);
             this.xuiCustomPictureBox1.TabIndex = 0;
             // 
             // label1
@@ -155,11 +157,22 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 6;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(82, 231);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(184, 23);
+            this.label2.TabIndex = 7;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(348, 394);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnCadastrar);
@@ -190,6 +203,7 @@
         private XanderUI.XUIButton btnCadastrar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
