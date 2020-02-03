@@ -79,7 +79,14 @@ namespace Game_library
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            CreateDataBase.CreateDataDirectory();
+            label1.Text = CreateDataBase.version;
+            label1.ForeColor = Color.FromArgb(0, 210, 65);
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            frmCadastro cadastro = new frmCadastro();
+            cadastro.ShowDialog();
         }
     }
 }

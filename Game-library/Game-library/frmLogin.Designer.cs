@@ -35,6 +35,7 @@
             this.btnCadastrar = new XanderUI.XUIButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.xuiCustomPictureBox1 = new XanderUI.XUICustomPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textLogin
@@ -104,7 +105,7 @@
             this.btnCadastrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
             this.btnCadastrar.ButtonImage = null;
             this.btnCadastrar.ButtonStyle = XanderUI.XUIButton.Style.Material;
-            this.btnCadastrar.ButtonText = "Cadastrar-se";
+            this.btnCadastrar.ButtonText = "Create Account";
             this.btnCadastrar.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnCadastrar.ClickTextColor = System.Drawing.Color.White;
             this.btnCadastrar.CornerRadius = 5;
@@ -119,6 +120,7 @@
             this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.TextColor = System.Drawing.Color.White;
             this.btnCadastrar.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // panel2
             // 
@@ -144,11 +146,21 @@
             this.xuiCustomPictureBox1.Size = new System.Drawing.Size(237, 122);
             this.xuiCustomPictureBox1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(162, 376);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 6;
+            // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(348, 394);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnLogin);
@@ -177,6 +189,7 @@
         private XanderUI.XUIButton btnLogin;
         private XanderUI.XUIButton btnCadastrar;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

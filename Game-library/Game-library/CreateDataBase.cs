@@ -11,6 +11,7 @@ namespace Game_library
 {
     public static partial class CreateDataBase
     {
+        public static string version = "1.0.0";
         public static string DB_folder;
         public static string conString;
 
@@ -58,7 +59,7 @@ namespace Game_library
 
 
                 string query = "CREATE TABLE Users(" +
-                               "COD_USER        INT PRIMARY KEY IDENTITY," +
+                               "COD_USER        INT PRIMARY KEY IDENTITY(1,1)," +
                                "USER_NAME       NVARCHAR(50) NOT NULL," +
                                "PASSWORD        NVARCHAR(50) NOT NULL," +
                                "DAT_INC_USER    DATETIME" +
@@ -70,14 +71,12 @@ namespace Game_library
 
 
                 //Desconectar
-
+                sqlCmd.Dispose();
                 connection.Close();
-                MessageBox.Show(connection.State.ToString());
             }
             catch
             {
                 MessageBox.Show("Erro ao se conectar com o Banco de Dados");
-
             }
         }
 
