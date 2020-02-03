@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateDataBase.cs" />
     <Compile Include="frmCadastro.cs">
       <SubType>Form</SubType>
     </Compile>

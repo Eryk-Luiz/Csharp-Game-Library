@@ -77,7 +77,9 @@ namespace Game_library
 
         #endregion
 
-
-
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            CreateDataBase.CreateDataDirectory();
+        }
     }
 }
