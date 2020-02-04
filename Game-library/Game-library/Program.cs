@@ -18,6 +18,7 @@ namespace Game_library
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
             CreateDataBase.CreateDataDirectory();
+            Application.Run(new Teste());
         }
     }
 }
