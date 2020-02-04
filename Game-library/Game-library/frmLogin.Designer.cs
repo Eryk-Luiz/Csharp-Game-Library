@@ -48,7 +48,7 @@
             this.textLogin.HideSelection = false;
             this.textLogin.Location = new System.Drawing.Point(49, 124);
             this.textLogin.Name = "textLogin";
-            this.textLogin.Size = new System.Drawing.Size(242, 19);
+            this.textLogin.Size = new System.Drawing.Size(242, 24);
             this.textLogin.TabIndex = 1;
             this.textLogin.TabStop = false;
             this.textLogin.Text = "Username";
@@ -72,7 +72,7 @@
             this.textPasswd.HideSelection = false;
             this.textPasswd.Location = new System.Drawing.Point(49, 191);
             this.textPasswd.Name = "textPasswd";
-            this.textPasswd.Size = new System.Drawing.Size(242, 19);
+            this.textPasswd.Size = new System.Drawing.Size(242, 24);
             this.textPasswd.TabIndex = 3;
             this.textPasswd.TabStop = false;
             this.textPasswd.Text = "Password";
@@ -154,7 +154,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(162, 376);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 6;
             // 
             // label2
@@ -186,7 +186,7 @@
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

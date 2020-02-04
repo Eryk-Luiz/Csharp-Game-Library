@@ -41,9 +41,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(49, 108);
+            this.panel2.Location = new System.Drawing.Point(45, 124);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 2);
+            this.panel2.Size = new System.Drawing.Size(333, 2);
             this.panel2.TabIndex = 8;
             // 
             // btnNewUser
@@ -60,9 +61,10 @@
             this.btnNewUser.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnNewUser.HoverTextColor = System.Drawing.Color.White;
             this.btnNewUser.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnNewUser.Location = new System.Drawing.Point(49, 219);
+            this.btnNewUser.Location = new System.Drawing.Point(45, 261);
+            this.btnNewUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewUser.Name = "btnNewUser";
-            this.btnNewUser.Size = new System.Drawing.Size(250, 34);
+            this.btnNewUser.Size = new System.Drawing.Size(333, 42);
             this.btnNewUser.TabIndex = 11;
             this.btnNewUser.TextColor = System.Drawing.Color.White;
             this.btnNewUser.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -75,9 +77,10 @@
             this.textNewPasswd.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNewPasswd.ForeColor = System.Drawing.Color.White;
             this.textNewPasswd.HideSelection = false;
-            this.textNewPasswd.Location = new System.Drawing.Point(49, 83);
+            this.textNewPasswd.Location = new System.Drawing.Point(45, 93);
+            this.textNewPasswd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textNewPasswd.Name = "textNewPasswd";
-            this.textNewPasswd.Size = new System.Drawing.Size(242, 19);
+            this.textNewPasswd.Size = new System.Drawing.Size(323, 24);
             this.textNewPasswd.TabIndex = 9;
             this.textNewPasswd.TabStop = false;
             this.textNewPasswd.Text = "Password";
@@ -87,9 +90,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(49, 61);
+            this.panel1.Location = new System.Drawing.Point(45, 66);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 2);
+            this.panel1.Size = new System.Drawing.Size(333, 2);
             this.panel1.TabIndex = 7;
             // 
             // textNewUser
@@ -99,9 +103,10 @@
             this.textNewUser.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNewUser.ForeColor = System.Drawing.Color.White;
             this.textNewUser.HideSelection = false;
-            this.textNewUser.Location = new System.Drawing.Point(49, 36);
+            this.textNewUser.Location = new System.Drawing.Point(45, 35);
+            this.textNewUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textNewUser.Name = "textNewUser";
-            this.textNewUser.Size = new System.Drawing.Size(242, 19);
+            this.textNewUser.Size = new System.Drawing.Size(323, 24);
             this.textNewUser.TabIndex = 6;
             this.textNewUser.TabStop = false;
             this.textNewUser.Text = "Username";
@@ -111,9 +116,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(49, 157);
+            this.panel3.Location = new System.Drawing.Point(45, 184);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(250, 2);
+            this.panel3.Size = new System.Drawing.Size(333, 2);
             this.panel3.TabIndex = 10;
             // 
             // textConfirmPasswd
@@ -123,9 +129,10 @@
             this.textConfirmPasswd.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textConfirmPasswd.ForeColor = System.Drawing.Color.White;
             this.textConfirmPasswd.HideSelection = false;
-            this.textConfirmPasswd.Location = new System.Drawing.Point(49, 137);
+            this.textConfirmPasswd.Location = new System.Drawing.Point(45, 160);
+            this.textConfirmPasswd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textConfirmPasswd.Name = "textConfirmPasswd";
-            this.textConfirmPasswd.Size = new System.Drawing.Size(242, 19);
+            this.textConfirmPasswd.Size = new System.Drawing.Size(323, 24);
             this.textConfirmPasswd.TabIndex = 11;
             this.textConfirmPasswd.TabStop = false;
             this.textConfirmPasswd.Text = "Confirm Password";
@@ -146,9 +153,10 @@
             this.btnCancelar.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnCancelar.HoverTextColor = System.Drawing.Color.White;
             this.btnCancelar.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnCancelar.Location = new System.Drawing.Point(89, 269);
+            this.btnCancelar.Location = new System.Drawing.Point(45, 322);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(167, 34);
+            this.btnCancelar.Size = new System.Drawing.Size(333, 42);
             this.btnCancelar.TabIndex = 12;
             this.btnCancelar.TextColor = System.Drawing.Color.White;
             this.btnCancelar.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -156,10 +164,10 @@
             // 
             // frmCadastro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(349, 315);
+            this.ClientSize = new System.Drawing.Size(422, 429);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel3);
@@ -170,6 +178,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textNewUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCadastro";
