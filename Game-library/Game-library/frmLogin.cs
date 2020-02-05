@@ -13,6 +13,8 @@ namespace Game_library
 {
     public partial class frmLogin : Form
     {
+        public static string User;
+
         public frmLogin()
         {
             InitializeComponent();
@@ -95,6 +97,7 @@ namespace Game_library
             else
             {
                 VerifyUser();
+                
             }
             
             
@@ -108,9 +111,11 @@ namespace Game_library
         //Ferifica se usuário e senha dos TextBoxes, estão no banco de Dados
         public void VerifyUser()
         {
-
+            
             try
             {
+
+
 
                 //connect
                 SqlCeConnection connection = new SqlCeConnection("Data Source = " + CreateDataBase.conString);
@@ -140,14 +145,20 @@ namespace Game_library
                 {
                     string user = table.Rows[0]["USER_NAME"].ToString();
                     string pass = table.Rows[0]["PASSWORD"].ToString();
+                    
 
 
 
                     //verifica se a senha está correta
                     if (textLogin.Text == user && textPasswd.Text == pass)
                     {
+                        
                         label2.Text = "";
-                        MessageBox.Show("Logou");
+                        this.Hide();
+                        User = table.Rows[0]["USER_NAME"].ToString();
+                        frmMain frm = new frmMain();
+                        frm.Show();
+                        
                     }
                     else
                     {

@@ -21,7 +21,6 @@ namespace Game_library
             InitializeComponent();
         }
 
-
         #region Events
 
         private void btnNewUser_Click(object sender, EventArgs e)
@@ -120,7 +119,6 @@ namespace Game_library
         }
 
         #endregion
-
 
         // Método para inserir registro no banco de Dados
         public void InsertUser()
