@@ -63,6 +63,16 @@ namespace Game_library.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap closeWindow_24px {
+            get {
+                object obj = ResourceManager.GetObject("closeWindow_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_lock {
             get {
                 object obj = ResourceManager.GetObject("eye-lock", resourceCulture);
@@ -86,6 +96,26 @@ namespace Game_library.Properties {
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_Opacity_ {
+            get {
+                object obj = ResourceManager.GetObject("Logo(Opacity)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimizeWindow_24px {
+            get {
+                object obj = ResourceManager.GetObject("minimizeWindow_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
