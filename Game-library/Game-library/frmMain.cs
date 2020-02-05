@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using XanderUI;
 
 namespace Game_library
 {
@@ -63,6 +65,15 @@ namespace Game_library
         private void logo_Click(object sender, EventArgs e)
         {
 
+            
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            XUICard card = new XUICard();
+            card.Location = new Point(54, 96);
+            this.Controls.Add(card);
+            
         }
     }
 }

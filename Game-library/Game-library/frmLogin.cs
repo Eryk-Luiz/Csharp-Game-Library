@@ -25,7 +25,6 @@ namespace Game_library
         {
             CreateDataBase.CreateDataDirectory();
             label1.Text = CreateDataBase.version;
-            label1.ForeColor = Color.FromArgb(0, 210, 65);
         }
 
         private void textLogin_Click(object sender, EventArgs e)
@@ -35,7 +34,7 @@ namespace Game_library
                 textLogin.Clear();
             }
             
-
+            //Muda a cor do sublinhado de baixo do Imput
             panel1.BackColor = Color.FromArgb(0, 210, 65);
         }
 
@@ -44,8 +43,10 @@ namespace Game_library
             if (textLogin.Text == "")
             {
                 textLogin.Text = "Username";
-                panel1.BackColor = Color.White;
+                
             }
+            //Muda a cor do sublinhado de baixo do Imput
+            panel1.BackColor = Color.White;
         }
 
         private void textPasswd_Click(object sender, EventArgs e)
@@ -54,10 +55,9 @@ namespace Game_library
             {
                 textPasswd.Clear();
             }
-            
 
+            //Muda a cor do sublinhado de baixo do Imput
             panel2.BackColor = Color.FromArgb(0, 210, 65);
-
             textPasswd.UseSystemPasswordChar = true;
         }
 
@@ -66,12 +66,14 @@ namespace Game_library
             if (textPasswd.Text == "")
             {
                 textPasswd.Text = "Password";
+
                 textPasswd.UseSystemPasswordChar = false;
-                panel2.BackColor = Color.White;
-
             }
-
+            //Muda a cor do sublinhado de baixo do Imput
             
+            panel2.BackColor = Color.White;
+
+
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -115,8 +117,6 @@ namespace Game_library
             try
             {
 
-
-
                 //connect
                 SqlCeConnection connection = new SqlCeConnection("Data Source = " + CreateDataBase.conString);
                 connection.Open();
@@ -125,7 +125,7 @@ namespace Game_library
                 //command
                 DataTable table = new DataTable();
 
-                string query = "SELECT USER_NAME, PASSWORD FROM Users WHERE USER_NAME =" + "'" + textLogin.Text + "'" + "OR PASSWORD = '" + textPasswd.Text + "'";
+                string query = "SELECT USER_NAME, PASSWORD FROM Users WHERE USER_NAME =" + "'" + textLogin.Text + "'" + "AND PASSWORD = '" + textPasswd.Text + "'";
 
                 SqlCeDataAdapter command = new SqlCeDataAdapter(query, connection);
                 command.Fill(table);
@@ -138,7 +138,7 @@ namespace Game_library
                 //verifica se o Registro existe
                 if (table.Rows.Count == 0)
                 {
-                    MessageBox.Show("Usuário não encontrado");
+                    MessageBox.Show("Usuário ou senha Incorreta");
                     label2.Text = "";
                 }
                 else
@@ -147,29 +147,31 @@ namespace Game_library
                     string pass = table.Rows[0]["PASSWORD"].ToString();
                     
 
-
-
                     //verifica se a senha está correta
-                    if (textLogin.Text == user && textPasswd.Text == pass)
+                    if (textLogin.Text != user || textPasswd.Text != pass)
                     {
-                        
-                        label2.Text = "";
-                        this.Hide();
-                        User = table.Rows[0]["USER_NAME"].ToString();
-                        frmMain frm = new frmMain();
-                        frm.Show();
-                        
+
+
+                        label2.Text = "Usuário ou senha Incorreta";
+
                     }
-                    else
+                    else 
                     {
-                        
-                        label2.Text = "Usuário ou senha Incorreto";
+                        User = textLogin.Text;
+
+
+                        //Esconde o frmLogin
+                        this.Hide();
+
+                        // Abre o frmMain    
+                        frmMain MainScreen = new frmMain();
+                        MainScreen.Show();
                     }
                 }
             }
             catch
             {
-                MessageBox.Show("ERRO DO SISTEMA");
+                MessageBox.Show("ERRO DO SISTEMA - Tente Novamente");
             }
 
         }
