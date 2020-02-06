@@ -14,14 +14,23 @@ namespace Game_library
 {
     public partial class frmMain : Form
     {
+        
+        New_Game New = new New_Game();
+        library library = new library();
+
         public frmMain()
         {
             InitializeComponent();
             
             
             labelLoggedUser.Text = "Welcome " + frmLogin.User;
-            labelLoggedUser.Text.ToUpper();
+            
 
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            ChangePanelContent(library);
         }
 
         #region WindowState
@@ -58,22 +67,36 @@ namespace Game_library
 
 
 
-        #endregion
+
+
 
         #endregion
 
-        private void logo_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-            
+
+        #region On Click, aletera conteúdo do Panel
+        public void ChangePanelContent(Control buttons)
+        {
+            panelLibrary.Controls.Clear();
+
+            panelLibrary.Dock = DockStyle.Fill;
+
+            panelLibrary.Controls.Add(buttons);
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void btnLibrary_Click(object sender, EventArgs e)
         {
-            XUICard card = new XUICard();
-            card.Location = new Point(54, 96);
-            this.Controls.Add(card);
-            
+            ChangePanelContent(New);
         }
+
+        private void xuiButton1_Click(object sender, EventArgs e)
+        {
+            ChangePanelContent(library);
+        }
+
+        #endregion
     }
+
 }
+
