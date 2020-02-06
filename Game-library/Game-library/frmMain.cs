@@ -14,6 +14,8 @@ namespace Game_library
 {
     public partial class frmMain : Form
     {
+        public int count = 2;
+
         public frmMain()
         {
             InitializeComponent();
@@ -58,22 +60,49 @@ namespace Game_library
 
 
 
-        #endregion
+
+
 
         #endregion
 
-        private void logo_Click(object sender, EventArgs e)
-        {
+        #endregion
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
             
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            XUICard card = new XUICard();
-            card.Location = new Point(54, 96);
-            this.Controls.Add(card);
-            
+            count++;
+            listContainer(count);
         }
+
+        private void listContainer(int count)
+        {
+            GameBanner game = new GameBanner();
+            List<GameBanner> list = new List<GameBanner>();
+
+
+
+            for (int i = 0; i < count; i++)
+            {
+                game.genre = "Action";
+                game.title = "Resident Evil";
+                game.description = "Horror Game";
+                list.Add(game);
+
+                flowLayoutPanel1.Controls.Add(list[i]);
+               
+            }
+            
+                               
+         }
+
+   
     }
-}
+
+    }
+
