@@ -14,7 +14,9 @@ namespace Game_library
 {
     public partial class frmMain : Form
     {
-        public int count = 2;
+        
+        New_Game New = new New_Game();
+        library library = new library();
 
         public frmMain()
         {
@@ -22,8 +24,13 @@ namespace Game_library
             
             
             labelLoggedUser.Text = "Welcome " + frmLogin.User;
-            labelLoggedUser.Text.ToUpper();
+            
 
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            ChangePanelContent(library);
         }
 
         #region WindowState
@@ -67,42 +74,29 @@ namespace Game_library
 
         #endregion
 
-        private void frmMain_Load(object sender, EventArgs e)
+
+        #region On Click, aletera conteúdo do Panel
+        public void ChangePanelContent(Control buttons)
         {
-            
+            panelLibrary.Controls.Clear();
+
+            panelLibrary.Dock = DockStyle.Fill;
+
+            panelLibrary.Controls.Add(buttons);
         }
 
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLibrary_Click(object sender, EventArgs e)
         {
-            count++;
-            listContainer(count);
+            ChangePanelContent(New);
         }
 
-        private void listContainer(int count)
+        private void xuiButton1_Click(object sender, EventArgs e)
         {
-            GameBanner game = new GameBanner();
-            List<GameBanner> list = new List<GameBanner>();
+            ChangePanelContent(library);
+        }
 
-
-
-            for (int i = 0; i < count; i++)
-            {
-                game.genre = "Action";
-                game.title = "Resident Evil";
-                game.description = "Horror Game";
-                list.Add(game);
-
-                flowLayoutPanel1.Controls.Add(list[i]);
-               
-            }
-            
-                               
-         }
-
-   
+        #endregion
     }
 
-    }
+}
 

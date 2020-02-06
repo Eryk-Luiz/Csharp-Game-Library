@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gameNameLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.genreLabel = new System.Windows.Forms.Label();
             this.btnLogin = new XanderUI.XUIButton();
             this.gameBannerImg = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gameBannerImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +83,7 @@
             this.btnLogin.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnLogin.HoverTextColor = System.Drawing.Color.White;
             this.btnLogin.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnLogin.Location = new System.Drawing.Point(875, 220);
+            this.btnLogin.Location = new System.Drawing.Point(821, 220);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(143, 34);
             this.btnLogin.TabIndex = 5;
@@ -109,8 +111,9 @@
             this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.gameNameLabel);
             this.Controls.Add(this.gameBannerImg);
+            this.Margin = new System.Windows.Forms.Padding(1, 35, 1, 1);
             this.Name = "GameBanner";
-            this.Size = new System.Drawing.Size(1030, 264);
+            this.Size = new System.Drawing.Size(988, 264);
             ((System.ComponentModel.ISupportInitialize)(this.gameBannerImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -124,5 +127,6 @@
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.Label genreLabel;
         private XanderUI.XUIButton btnLogin;
+        private System.Windows.Forms.Timer timer1;
     }
 }

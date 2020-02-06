@@ -31,21 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.labelLoggedUser = new System.Windows.Forms.Label();
-            this.logo = new XanderUI.XUICustomPictureBox();
-            this.WindowsMinimize = new System.Windows.Forms.Panel();
-            this.WindowClose = new System.Windows.Forms.Panel();
             this.PanelAsideLeft = new System.Windows.Forms.Panel();
             this.xuiButton1 = new XanderUI.XUIButton();
             this.btnSettings = new XanderUI.XUIButton();
             this.btnLibrary = new XanderUI.XUIButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.libraryPanel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panelLibrary = new System.Windows.Forms.Panel();
+            this.logo = new XanderUI.XUICustomPictureBox();
+            this.WindowsMinimize = new System.Windows.Forms.Panel();
+            this.WindowClose = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.library1 = new Game_library.library();
             this.HeaderPanel.SuspendLayout();
             this.PanelAsideLeft.SuspendLayout();
-            this.libraryPanel.SuspendLayout();
+            this.panelLibrary.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderPanel
@@ -73,43 +72,6 @@
             this.labelLoggedUser.TabIndex = 6;
             this.labelLoggedUser.Text = "USER";
             this.labelLoggedUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // logo
-            // 
-            this.logo.BackgroundImage = global::Game_library.Properties.Resources.Logo;
-            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.logo.Color1 = System.Drawing.Color.DodgerBlue;
-            this.logo.Color2 = System.Drawing.Color.DodgerBlue;
-            this.logo.FilterAlpha = 200;
-            this.logo.FilterEnabled = true;
-            this.logo.Image = null;
-            this.logo.IsElipse = false;
-            this.logo.IsParallax = false;
-            this.logo.Location = new System.Drawing.Point(10, -12);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(110, 83);
-            this.logo.TabIndex = 5;
-            this.logo.Text = "xuiCustomPictureBox1";
-            // 
-            // WindowsMinimize
-            // 
-            this.WindowsMinimize.BackgroundImage = global::Game_library.Properties.Resources.minimizeWindow_24px;
-            this.WindowsMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.WindowsMinimize.Location = new System.Drawing.Point(1186, 12);
-            this.WindowsMinimize.Name = "WindowsMinimize";
-            this.WindowsMinimize.Size = new System.Drawing.Size(33, 30);
-            this.WindowsMinimize.TabIndex = 4;
-            this.WindowsMinimize.Click += new System.EventHandler(this.panel6_Click);
-            // 
-            // WindowClose
-            // 
-            this.WindowClose.BackgroundImage = global::Game_library.Properties.Resources.closeWindow_24px;
-            this.WindowClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.WindowClose.Location = new System.Drawing.Point(1225, 12);
-            this.WindowClose.Name = "WindowClose";
-            this.WindowClose.Size = new System.Drawing.Size(33, 30);
-            this.WindowClose.TabIndex = 3;
-            this.WindowClose.Click += new System.EventHandler(this.panel5_Click);
             // 
             // PanelAsideLeft
             // 
@@ -146,6 +108,7 @@
             this.xuiButton1.TabIndex = 3;
             this.xuiButton1.TextColor = System.Drawing.Color.White;
             this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton1.Click += new System.EventHandler(this.xuiButton1_Click);
             // 
             // btnSettings
             // 
@@ -190,6 +153,7 @@
             this.btnLibrary.TabIndex = 1;
             this.btnLibrary.TextColor = System.Drawing.Color.White;
             this.btnLibrary.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnLibrary.Click += new System.EventHandler(this.btnLibrary_Click);
             // 
             // panel1
             // 
@@ -201,35 +165,51 @@
             this.panel1.Size = new System.Drawing.Size(137, 2);
             this.panel1.TabIndex = 0;
             // 
-            // libraryPanel
+            // panelLibrary
             // 
-            this.libraryPanel.Controls.Add(this.flowLayoutPanel1);
-            this.libraryPanel.Controls.Add(this.button1);
-            this.libraryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.libraryPanel.Location = new System.Drawing.Point(137, 54);
-            this.libraryPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.libraryPanel.Name = "libraryPanel";
-            this.libraryPanel.Size = new System.Drawing.Size(1134, 673);
-            this.libraryPanel.TabIndex = 3;
+            this.panelLibrary.Controls.Add(this.library1);
+            this.panelLibrary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLibrary.Location = new System.Drawing.Point(137, 54);
+            this.panelLibrary.Name = "panelLibrary";
+            this.panelLibrary.Size = new System.Drawing.Size(1134, 673);
+            this.panelLibrary.TabIndex = 3;
             // 
-            // flowLayoutPanel1
+            // logo
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 60);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1134, 613);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.logo.BackgroundImage = global::Game_library.Properties.Resources.Logo;
+            this.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.logo.Color1 = System.Drawing.Color.DodgerBlue;
+            this.logo.Color2 = System.Drawing.Color.DodgerBlue;
+            this.logo.FilterAlpha = 200;
+            this.logo.FilterEnabled = true;
+            this.logo.Image = null;
+            this.logo.IsElipse = false;
+            this.logo.IsParallax = false;
+            this.logo.Location = new System.Drawing.Point(10, -12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(110, 83);
+            this.logo.TabIndex = 5;
+            this.logo.Text = "xuiCustomPictureBox1";
             // 
-            // button1
+            // WindowsMinimize
             // 
-            this.button1.Location = new System.Drawing.Point(14, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 45);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.WindowsMinimize.BackgroundImage = global::Game_library.Properties.Resources.minimizeWindow_24px;
+            this.WindowsMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.WindowsMinimize.Location = new System.Drawing.Point(1186, 12);
+            this.WindowsMinimize.Name = "WindowsMinimize";
+            this.WindowsMinimize.Size = new System.Drawing.Size(33, 30);
+            this.WindowsMinimize.TabIndex = 4;
+            this.WindowsMinimize.Click += new System.EventHandler(this.panel6_Click);
+            // 
+            // WindowClose
+            // 
+            this.WindowClose.BackgroundImage = global::Game_library.Properties.Resources.closeWindow_24px;
+            this.WindowClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.WindowClose.Location = new System.Drawing.Point(1225, 12);
+            this.WindowClose.Name = "WindowClose";
+            this.WindowClose.Size = new System.Drawing.Size(33, 30);
+            this.WindowClose.TabIndex = 3;
+            this.WindowClose.Click += new System.EventHandler(this.panel5_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -239,6 +219,13 @@
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
+            // library1
+            // 
+            this.library1.Location = new System.Drawing.Point(0, 0);
+            this.library1.Name = "library1";
+            this.library1.Size = new System.Drawing.Size(1134, 673);
+            this.library1.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,7 +233,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1271, 727);
-            this.Controls.Add(this.libraryPanel);
+            this.Controls.Add(this.panelLibrary);
             this.Controls.Add(this.PanelAsideLeft);
             this.Controls.Add(this.HeaderPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -257,7 +244,7 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.HeaderPanel.ResumeLayout(false);
             this.PanelAsideLeft.ResumeLayout(false);
-            this.libraryPanel.ResumeLayout(false);
+            this.panelLibrary.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -271,11 +258,10 @@
         private System.Windows.Forms.Panel PanelAsideLeft;
         private System.Windows.Forms.Panel panel1;
         private XanderUI.XUIButton btnLibrary;
-        private System.Windows.Forms.Panel libraryPanel;
         private XanderUI.XUIButton btnSettings;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private XanderUI.XUIButton xuiButton1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panelLibrary;
+        private library library1;
     }
 }

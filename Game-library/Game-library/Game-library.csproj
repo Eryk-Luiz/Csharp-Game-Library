@@ -84,6 +84,18 @@
     <Compile Include="GameBanner.Designer.cs">
       <DependentUpon>GameBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="library.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="library.Designer.cs">
+      <DependentUpon>library.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New Game.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="New Game.Designer.cs">
+      <DependentUpon>New Game.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCadastro.resx">
@@ -97,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameBanner.resx">
       <DependentUpon>GameBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="library.resx">
+      <DependentUpon>library.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Game.resx">
+      <DependentUpon>New Game.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
