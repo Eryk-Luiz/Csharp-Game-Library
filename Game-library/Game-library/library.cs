@@ -15,7 +15,7 @@ namespace Game_library
     {
         public int count;
 
-        
+
 
         public library()
         {
@@ -47,19 +47,19 @@ namespace Game_library
                 GameBanner game = new GameBanner();
                 List<GameBanner> gamelist = new List<GameBanner>();
 
+
 <<<<<<< HEAD
+                SqlCeConnection connection = new SqlCeConnection("Data Source = " + CreateDataBase.conString);
+                connection.Open();
 
-            SqlCeConnection connection = new SqlCeConnection("Data Source = " + CreateDataBase.conString);
-            connection.Open();
 
+                DataTable table = new DataTable();
+                string query = "SELECT USER_NAME FROM Users";
+                SqlCeDataAdapter command = new SqlCeDataAdapter(query, connection);
+                command.Fill(table);
 
-            DataTable table = new DataTable();
-            string query = "SELECT USER_NAME FROM Users";
-            SqlCeDataAdapter command = new SqlCeDataAdapter(query, connection);
-            command.Fill(table);
+                connection.Close();
 
-            connection.Close();
-           
 
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
@@ -70,10 +70,10 @@ namespace Game_library
 
                     flowLayoutPanel1.Controls.Add(list[i]);
                 }
-            
-            
 
-        
+
+
+
 =======
                 
                 game.title = line["GAME_TITLE"].ToString();
@@ -90,8 +90,9 @@ namespace Game_library
 
 
 >>>>>>> 836ae90d6bb3f2295da3c21a9d6677180fcc1608
-        }
+            }
 
-       
+
+        }
     }
 }
