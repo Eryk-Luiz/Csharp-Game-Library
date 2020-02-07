@@ -180,7 +180,7 @@
             // 
             // panelLibrary
             // 
-            this.panelLibrary.Controls.Add(this.library1);
+            this.panelLibrary.Controls.Add(this.library);
             this.panelLibrary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLibrary.Location = new System.Drawing.Point(137, 54);
             this.panelLibrary.Name = "panelLibrary";
@@ -197,10 +197,10 @@
             // 
             // library1
             // 
-            this.library1.Location = new System.Drawing.Point(0, 0);
-            this.library1.Name = "library1";
-            this.library1.Size = new System.Drawing.Size(1134, 673);
-            this.library1.TabIndex = 0;
+            this.library.Location = new System.Drawing.Point(0, 0);
+            this.library.Name = "library";
+            this.library.Size = new System.Drawing.Size(1134, 673);
+            this.library.TabIndex = 0;
             // 
             // frmMain
             // 

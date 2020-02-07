@@ -66,8 +66,8 @@ namespace Game_library
         private string _gamepath;
         public string gamepath
         {
-            get { return gamepath; }
-            set { _gamepath = value; }
+            get { return _gamepath; }
+            set { _gamepath = value; } 
         }
 
 
@@ -75,7 +75,7 @@ namespace Game_library
 
         private void xuiButton1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("@" + "'" + gamepath + "'");
+            System.Diagnostics.Process.Start(gamepath);
         }
     }
 }

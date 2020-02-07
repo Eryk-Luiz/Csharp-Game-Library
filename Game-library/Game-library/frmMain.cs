@@ -93,6 +93,9 @@ namespace Game_library
         private void xuiButton1_Click(object sender, EventArgs e)
         {
             ChangePanelContent(library);
+            library.flowLayoutPanel1.Controls.Clear();
+            library.getGameInfo();
+            
         }
 
         #endregion

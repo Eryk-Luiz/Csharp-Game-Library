@@ -23,9 +23,12 @@ namespace Game_library
 
         private void btnSaveGame_Click(object sender, EventArgs e)
         {
+
+            library library = new library();
             InsertGameInfo(text_title.Text, text_genre.Text, text_imgFile.Text, text_gameFile.Text, text_description.Text);
             MessageBox.Show("Novo Jogo Salvo");
             Clear();
+            
 
         }
 

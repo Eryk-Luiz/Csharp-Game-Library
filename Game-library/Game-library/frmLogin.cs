@@ -110,7 +110,7 @@ namespace Game_library
 
         
 
-        //Ferifica se usuário e senha dos TextBoxes, estão no banco de Dados
+        //Verifica se usuário e senha dos TextBoxes, estão no banco de Dados
         public void VerifyUser()
         {
             
@@ -123,12 +123,12 @@ namespace Game_library
 
 
                 //command
-                DataTable table = new DataTable();
+                DataTable table1 = new DataTable();
 
                 string query = "SELECT USER_NAME, PASSWORD FROM Users WHERE USER_NAME =" + "'" + textLogin.Text + "'" + "AND PASSWORD = '" + textPasswd.Text + "'";
 
                 SqlCeDataAdapter command = new SqlCeDataAdapter(query, connection);
-                command.Fill(table);
+                command.Fill(table1);
 
                 //disconect
                 command.Dispose();
@@ -136,15 +136,15 @@ namespace Game_library
 
 
                 //verifica se o Registro existe
-                if (table.Rows.Count == 0)
+                if (table1.Rows.Count == 0)
                 {
-                    MessageBox.Show("Usuário ou senha Incorreta");
+                    MessageBox.Show("Usuário não encontrado");
                     label2.Text = "";
                 }
                 else
                 {
-                    string user = table.Rows[0]["USER_NAME"].ToString();
-                    string pass = table.Rows[0]["PASSWORD"].ToString();
+                    string user = table1.Rows[0]["USER_NAME"].ToString();
+                    string pass = table1.Rows[0]["PASSWORD"].ToString();
                     
 
                     //verifica se a senha está correta
