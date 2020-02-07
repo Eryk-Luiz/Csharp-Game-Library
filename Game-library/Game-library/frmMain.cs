@@ -23,7 +23,7 @@ namespace Game_library
             InitializeComponent();
             
             
-            labelLoggedUser.Text = frmLogin.User;
+            labelLoggedUser.Text = "Welcome " + frmLogin.User;
             
 
         }

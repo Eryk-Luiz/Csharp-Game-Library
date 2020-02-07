@@ -29,17 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.gameNameLabel = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.genreLabel = new System.Windows.Forms.Label();
             this.btnLogin = new XanderUI.XUIButton();
             this.gameBannerImg = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label_title = new System.Windows.Forms.Label();
-            this.label_genre = new System.Windows.Forms.Label();
-            this.label_disc = new System.Windows.Forms.Label();
-            this.xuiButton1 = new XanderUI.XUIButton();
             ((System.ComponentModel.ISupportInitialize)(this.gameBannerImg)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gameNameLabel
+            // 
+            this.gameNameLabel.AutoSize = true;
+            this.gameNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.gameNameLabel.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
+            this.gameNameLabel.Location = new System.Drawing.Point(214, 12);
+            this.gameNameLabel.Name = "gameNameLabel";
+            this.gameNameLabel.Size = new System.Drawing.Size(179, 37);
+            this.gameNameLabel.TabIndex = 1;
+            this.gameNameLabel.Text = "Game Name";
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(217, 64);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(512, 62);
+            this.descriptionLabel.TabIndex = 2;
+            this.descriptionLabel.Text = "Description";
+            // 
+            // genreLabel
+            // 
+            this.genreLabel.AutoSize = true;
+            this.genreLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genreLabel.Location = new System.Drawing.Point(214, 235);
+            this.genreLabel.Name = "genreLabel";
+            this.genreLabel.Size = new System.Drawing.Size(72, 19);
+            this.genreLabel.TabIndex = 3;
+            this.genreLabel.Text = "Genero:";
             // 
             // btnLogin
             // 
@@ -55,7 +83,7 @@
             this.btnLogin.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnLogin.HoverTextColor = System.Drawing.Color.White;
             this.btnLogin.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnLogin.Location = new System.Drawing.Point(669, 164);
+            this.btnLogin.Location = new System.Drawing.Point(821, 220);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(143, 34);
             this.btnLogin.TabIndex = 5;
@@ -66,112 +94,39 @@
             // gameBannerImg
             // 
             this.gameBannerImg.BackgroundImage = global::Game_library.Properties.Resources.resident_evil_3;
-            this.gameBannerImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.gameBannerImg.Location = new System.Drawing.Point(3, 3);
+            this.gameBannerImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gameBannerImg.Location = new System.Drawing.Point(20, 12);
             this.gameBannerImg.Name = "gameBannerImg";
-            this.gameBannerImg.Size = new System.Drawing.Size(205, 211);
+            this.gameBannerImg.Size = new System.Drawing.Size(188, 242);
             this.gameBannerImg.TabIndex = 0;
             this.gameBannerImg.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(214, 101);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 2);
-            this.panel2.TabIndex = 16;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel1.Location = new System.Drawing.Point(214, 47);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(416, 2);
-            this.panel1.TabIndex = 14;
-            // 
-            // label_title
-            // 
-            this.label_title.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_title.ForeColor = System.Drawing.Color.White;
-            this.label_title.Location = new System.Drawing.Point(214, 21);
-            this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(418, 23);
-            this.label_title.TabIndex = 17;
-            this.label_title.Text = "Title";
-            // 
-            // label_genre
-            // 
-            this.label_genre.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_genre.ForeColor = System.Drawing.Color.White;
-            this.label_genre.Location = new System.Drawing.Point(214, 75);
-            this.label_genre.Name = "label_genre";
-            this.label_genre.Size = new System.Drawing.Size(416, 23);
-            this.label_genre.TabIndex = 18;
-            this.label_genre.Text = "genre";
-            // 
-            // label_disc
-            // 
-            this.label_disc.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_disc.ForeColor = System.Drawing.Color.White;
-            this.label_disc.Location = new System.Drawing.Point(216, 120);
-            this.label_disc.Name = "label_disc";
-            this.label_disc.Size = new System.Drawing.Size(414, 78);
-            this.label_disc.TabIndex = 19;
-            this.label_disc.Text = "Discription";
-            // 
-            // xuiButton1
-            // 
-            this.xuiButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.xuiButton1.ButtonImage = null;
-            this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.Material;
-            this.xuiButton1.ButtonText = "Start Game";
-            this.xuiButton1.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
-            this.xuiButton1.ClickTextColor = System.Drawing.Color.White;
-            this.xuiButton1.CornerRadius = 5;
-            this.xuiButton1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xuiButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
-            this.xuiButton1.HoverTextColor = System.Drawing.Color.White;
-            this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton1.Location = new System.Drawing.Point(669, 21);
-            this.xuiButton1.Name = "xuiButton1";
-            this.xuiButton1.Size = new System.Drawing.Size(143, 124);
-            this.xuiButton1.TabIndex = 20;
-            this.xuiButton1.TextColor = System.Drawing.Color.White;
-            this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton1.Click += new System.EventHandler(this.xuiButton1_Click);
             // 
             // GameBanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.Controls.Add(this.xuiButton1);
-            this.Controls.Add(this.label_disc);
-            this.Controls.Add(this.label_genre);
-            this.Controls.Add(this.label_title);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.genreLabel);
+            this.Controls.Add(this.descriptionLabel);
+            this.Controls.Add(this.gameNameLabel);
             this.Controls.Add(this.gameBannerImg);
-            this.Margin = new System.Windows.Forms.Padding(50, 35, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1, 35, 1, 1);
             this.Name = "GameBanner";
-            this.Size = new System.Drawing.Size(833, 217);
+            this.Size = new System.Drawing.Size(988, 264);
             ((System.ComponentModel.ISupportInitialize)(this.gameBannerImg)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox gameBannerImg;
+        private System.Windows.Forms.Label gameNameLabel;
+        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Label genreLabel;
         private XanderUI.XUIButton btnLogin;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_title;
-        private System.Windows.Forms.Label label_genre;
-        private System.Windows.Forms.Label label_disc;
-        private XanderUI.XUIButton xuiButton1;
     }
 }

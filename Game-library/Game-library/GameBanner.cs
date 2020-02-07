@@ -32,7 +32,7 @@ namespace Game_library
         public string title
         {
             get { return _Title; }
-            set { _Title = value; label_title.Text = value; }
+            set { _Title = value; gameNameLabel.Text = value; }
         }
 
 
@@ -41,7 +41,7 @@ namespace Game_library
         public string description
         {
             get { return _description; }
-            set { _description = value; label_disc.Text = value; }
+            set { _description = value; descriptionLabel.Text = value; }
         }
 
 
@@ -50,7 +50,7 @@ namespace Game_library
         public string genre
         {
             get { return _genre; }
-            set { _genre = value; label_genre.Text = value; }
+            set { _genre = value; genreLabel.Text = value; }
         }
 
 
@@ -59,23 +59,10 @@ namespace Game_library
         public string img
         {
             get { return _img; }
-            set { _img = value; gameBannerImg.BackgroundImage = Image.FromFile(value); }
+            set { _img = value; }
         }
-
-
-        private string _gamepath;
-        public string gamepath
-        {
-            get { return gamepath; }
-            set { _gamepath = value; }
-        }
-
-
         #endregion
 
-        private void xuiButton1_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("@" + "'" + gamepath + "'");
-        }
+
     }
 }
