@@ -28,23 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.libraryPanel = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+=======
+>>>>>>> 836ae90d6bb3f2295da3c21a9d6677180fcc1608
             this.libraryPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
+<<<<<<< HEAD
             this.flowLayoutPanel1.Location = new System.Drawing.Point(208, 74);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1304, 754);
+=======
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(138, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(996, 673);
+>>>>>>> 836ae90d6bb3f2295da3c21a9d6677180fcc1608
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // libraryPanel
@@ -52,7 +60,6 @@
             this.libraryPanel.Controls.Add(this.textBox2);
             this.libraryPanel.Controls.Add(this.textBox1);
             this.libraryPanel.Controls.Add(this.flowLayoutPanel1);
-            this.libraryPanel.Controls.Add(this.button1);
             this.libraryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.libraryPanel.Location = new System.Drawing.Point(0, 0);
             this.libraryPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -60,6 +67,7 @@
             this.libraryPanel.Size = new System.Drawing.Size(1512, 828);
             this.libraryPanel.TabIndex = 4;
             // 
+<<<<<<< HEAD
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(19, 11);
@@ -85,6 +93,8 @@
             this.textBox2.Size = new System.Drawing.Size(140, 22);
             this.textBox2.TabIndex = 3;
             // 
+=======
+>>>>>>> 836ae90d6bb3f2295da3c21a9d6677180fcc1608
             // library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -103,9 +113,12 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel libraryPanel;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+=======
+>>>>>>> 836ae90d6bb3f2295da3c21a9d6677180fcc1608
     }
 }
