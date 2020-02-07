@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlServerCe;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Game_library
 {
@@ -33,7 +28,7 @@ namespace Game_library
             {
                 textLogin.Clear();
             }
-            
+
             //Muda a cor do sublinhado de baixo do Imput
             panel1.BackColor = Color.FromArgb(0, 210, 65);
         }
@@ -43,7 +38,7 @@ namespace Game_library
             if (textLogin.Text == "")
             {
                 textLogin.Text = "Username";
-                
+
             }
             //Muda a cor do sublinhado de baixo do Imput
             panel1.BackColor = Color.White;
@@ -70,7 +65,7 @@ namespace Game_library
                 textPasswd.UseSystemPasswordChar = false;
             }
             //Muda a cor do sublinhado de baixo do Imput
-            
+
             panel2.BackColor = Color.White;
 
 
@@ -88,32 +83,32 @@ namespace Game_library
             {
                 label2.Text = "";
                 MessageBox.Show("Preencha os Campos");
-                
+
             }
-            else if (textPasswd.Text == "Password") 
+            else if (textPasswd.Text == "Password")
             {
                 label2.Text = "";
                 MessageBox.Show("Insira uma Senha");
-                
+
             }
             else
             {
                 VerifyUser();
-                
+
             }
-            
-            
+
+
 
         }
 
         #endregion
 
-        
+
 
         //Verifica se usuário e senha dos TextBoxes, estão no banco de Dados
         public void VerifyUser()
         {
-            
+
             try
             {
 
@@ -145,7 +140,7 @@ namespace Game_library
                 {
                     string user = table1.Rows[0]["USER_NAME"].ToString();
                     string pass = table1.Rows[0]["PASSWORD"].ToString();
-                    
+
 
                     //verifica se a senha está correta
                     if (textLogin.Text != user || textPasswd.Text != pass)
@@ -155,7 +150,7 @@ namespace Game_library
                         label2.Text = "Usuário ou senha Incorreta";
 
                     }
-                    else 
+                    else
                     {
                         User = textLogin.Text;
 
@@ -176,6 +171,6 @@ namespace Game_library
 
         }
 
-        
+
     }
 }

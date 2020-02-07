@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlServerCe;
-using System.Drawing.Imaging;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Game_library
 {
@@ -17,7 +11,7 @@ namespace Game_library
         public New_Game()
         {
             InitializeComponent();
-            CreatingGameTable();
+            
         }
 
 
@@ -28,7 +22,7 @@ namespace Game_library
             InsertGameInfo(text_title.Text, text_genre.Text, text_imgFile.Text, text_gameFile.Text, text_description.Text);
             MessageBox.Show("Novo Jogo Salvo");
             Clear();
-            
+
 
         }
 
@@ -225,22 +219,22 @@ namespace Game_library
             text_gameFile.Text = imgfile1.FileName;
         }
 
-         
+
 
         private void text_imgFile_TextChanged(object sender, EventArgs e)
         {
 
             if (text_imgFile.Text != "Image File")
             {
-                
+
             }
             else
             {
                 return;
             }
-         
-            
-            
+
+
+
         }
 
         public void Clear()
@@ -256,6 +250,6 @@ namespace Game_library
 
         }
 
-      
+
     }
 }

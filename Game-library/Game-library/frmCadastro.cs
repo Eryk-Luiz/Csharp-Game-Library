@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlServerCe;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Game_library
 {
     public partial class frmCadastro : Form
     {
 
-       
+
 
         public frmCadastro()
         {
@@ -25,7 +19,7 @@ namespace Game_library
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-            if (textNewUser.Text == "Username" && textNewPasswd.Text == "Password" && textConfirmPasswd.Text == "Confirm Password") 
+            if (textNewUser.Text == "Username" && textNewPasswd.Text == "Password" && textConfirmPasswd.Text == "Confirm Password")
             {
                 MessageBox.Show("Os Campos estão Vazios");
             }
@@ -35,10 +29,10 @@ namespace Game_library
             }
             else if (textNewPasswd.Text != textConfirmPasswd.Text)
             {
-                
+
                 MessageBox.Show("As Senhas devem ser iguais!");
             }
-            
+
             else
             {
                 InsertUser();
@@ -95,7 +89,7 @@ namespace Game_library
                 panel1.BackColor = Color.White;
             }
 
-            
+
         }
 
         private void textNewPasswd_Leave(object sender, EventArgs e)
@@ -160,6 +154,6 @@ namespace Game_library
 
         }
 
-    
+
     }
 }

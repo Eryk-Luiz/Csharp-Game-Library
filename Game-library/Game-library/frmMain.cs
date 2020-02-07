@@ -1,30 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using XanderUI;
 
 namespace Game_library
 {
     public partial class frmMain : Form
     {
-        
+
         New_Game New = new New_Game();
         library library = new library();
 
         public frmMain()
         {
             InitializeComponent();
-            
-            
+
+
+
+            New.CreatingGameTable();
+            library.getGameInfo();
+
             labelLoggedUser.Text = frmLogin.User;
-            
+
 
         }
 
@@ -95,7 +90,7 @@ namespace Game_library
             ChangePanelContent(library);
             library.flowLayoutPanel1.Controls.Clear();
             library.getGameInfo();
-            
+
         }
 
         #endregion
