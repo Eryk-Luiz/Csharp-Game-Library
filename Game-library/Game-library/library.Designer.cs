@@ -36,10 +36,11 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(184, 93);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1328, 702);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1299, 681);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // libraryPanel
@@ -49,7 +50,7 @@
             this.libraryPanel.Location = new System.Drawing.Point(0, 0);
             this.libraryPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.libraryPanel.Name = "libraryPanel";
-            this.libraryPanel.Size = new System.Drawing.Size(1512, 828);
+            this.libraryPanel.Size = new System.Drawing.Size(1299, 681);
             this.libraryPanel.TabIndex = 4;
             // 
             // library
@@ -59,7 +60,7 @@
             this.Controls.Add(this.libraryPanel);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "library";
-            this.Size = new System.Drawing.Size(1512, 828);
+            this.Size = new System.Drawing.Size(1299, 681);
             this.libraryPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 

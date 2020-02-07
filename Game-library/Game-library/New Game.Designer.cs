@@ -53,9 +53,10 @@
             this.previewBoxImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.previewBoxImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.previewBoxImg.InitialImage = global::Game_library.Properties.Resources.Logo;
-            this.previewBoxImg.Location = new System.Drawing.Point(821, 72);
+            this.previewBoxImg.Location = new System.Drawing.Point(945, 49);
+            this.previewBoxImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.previewBoxImg.Name = "previewBoxImg";
-            this.previewBoxImg.Size = new System.Drawing.Size(253, 305);
+            this.previewBoxImg.Size = new System.Drawing.Size(337, 375);
             this.previewBoxImg.TabIndex = 0;
             this.previewBoxImg.TabStop = false;
             // 
@@ -73,9 +74,10 @@
             this.btnSaveGame.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSaveGame.HoverTextColor = System.Drawing.Color.White;
             this.btnSaveGame.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSaveGame.Location = new System.Drawing.Point(944, 578);
+            this.btnSaveGame.Location = new System.Drawing.Point(1056, 603);
+            this.btnSaveGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaveGame.Name = "btnSaveGame";
-            this.btnSaveGame.Size = new System.Drawing.Size(164, 51);
+            this.btnSaveGame.Size = new System.Drawing.Size(226, 63);
             this.btnSaveGame.TabIndex = 6;
             this.btnSaveGame.TextColor = System.Drawing.Color.White;
             this.btnSaveGame.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -84,9 +86,10 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(861, 46);
+            this.label1.Location = new System.Drawing.Point(998, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 23);
+            this.label1.Size = new System.Drawing.Size(251, 28);
             this.label1.TabIndex = 7;
             this.label1.Text = "PreView";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,9 +97,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel1.Location = new System.Drawing.Point(50, 157);
+            this.panel1.Location = new System.Drawing.Point(28, 184);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(416, 2);
+            this.panel1.Size = new System.Drawing.Size(555, 2);
             this.panel1.TabIndex = 9;
             // 
             // text_title
@@ -106,9 +110,10 @@
             this.text_title.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_title.ForeColor = System.Drawing.Color.Black;
             this.text_title.HideSelection = false;
-            this.text_title.Location = new System.Drawing.Point(50, 122);
+            this.text_title.Location = new System.Drawing.Point(28, 141);
+            this.text_title.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.text_title.Name = "text_title";
-            this.text_title.Size = new System.Drawing.Size(378, 29);
+            this.text_title.Size = new System.Drawing.Size(504, 36);
             this.text_title.TabIndex = 8;
             this.text_title.TabStop = false;
             this.text_title.Text = "Tittle";
@@ -118,9 +123,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(50, 235);
+            this.panel2.Location = new System.Drawing.Point(28, 280);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 2);
+            this.panel2.Size = new System.Drawing.Size(557, 2);
             this.panel2.TabIndex = 12;
             // 
             // text_genre
@@ -130,9 +136,10 @@
             this.text_genre.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_genre.ForeColor = System.Drawing.Color.Black;
             this.text_genre.HideSelection = false;
-            this.text_genre.Location = new System.Drawing.Point(50, 200);
+            this.text_genre.Location = new System.Drawing.Point(28, 237);
+            this.text_genre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.text_genre.Name = "text_genre";
-            this.text_genre.Size = new System.Drawing.Size(416, 29);
+            this.text_genre.Size = new System.Drawing.Size(555, 36);
             this.text_genre.TabIndex = 11;
             this.text_genre.TabStop = false;
             this.text_genre.Text = "Genre";
@@ -146,10 +153,11 @@
             this.text_description.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_description.ForeColor = System.Drawing.Color.Black;
             this.text_description.HideSelection = false;
-            this.text_description.Location = new System.Drawing.Point(50, 512);
+            this.text_description.Location = new System.Drawing.Point(28, 545);
+            this.text_description.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.text_description.Multiline = true;
             this.text_description.Name = "text_description";
-            this.text_description.Size = new System.Drawing.Size(854, 117);
+            this.text_description.Size = new System.Drawing.Size(1009, 121);
             this.text_description.TabIndex = 13;
             this.text_description.TabStop = false;
             this.text_description.Text = "Description";
@@ -159,17 +167,19 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel3.Location = new System.Drawing.Point(19, 644);
+            this.panel3.Location = new System.Drawing.Point(25, 793);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1100, 2);
+            this.panel3.Size = new System.Drawing.Size(1467, 2);
             this.panel3.TabIndex = 13;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel4.Location = new System.Drawing.Point(50, 335);
+            this.panel4.Location = new System.Drawing.Point(31, 348);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(632, 2);
+            this.panel4.Size = new System.Drawing.Size(843, 2);
             this.panel4.TabIndex = 14;
             // 
             // text_imgFile
@@ -179,9 +189,10 @@
             this.text_imgFile.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_imgFile.ForeColor = System.Drawing.Color.Black;
             this.text_imgFile.HideSelection = false;
-            this.text_imgFile.Location = new System.Drawing.Point(48, 300);
+            this.text_imgFile.Location = new System.Drawing.Point(28, 305);
+            this.text_imgFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.text_imgFile.Name = "text_imgFile";
-            this.text_imgFile.Size = new System.Drawing.Size(632, 29);
+            this.text_imgFile.Size = new System.Drawing.Size(843, 36);
             this.text_imgFile.TabIndex = 13;
             this.text_imgFile.TabStop = false;
             this.text_imgFile.Text = "Image File";
@@ -203,9 +214,10 @@
             this.btnSearchImg.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSearchImg.HoverTextColor = System.Drawing.Color.White;
             this.btnSearchImg.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSearchImg.Location = new System.Drawing.Point(50, 343);
+            this.btnSearchImg.Location = new System.Drawing.Point(28, 358);
+            this.btnSearchImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchImg.Name = "btnSearchImg";
-            this.btnSearchImg.Size = new System.Drawing.Size(112, 34);
+            this.btnSearchImg.Size = new System.Drawing.Size(149, 42);
             this.btnSearchImg.TabIndex = 15;
             this.btnSearchImg.TextColor = System.Drawing.Color.White;
             this.btnSearchImg.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -225,9 +237,10 @@
             this.btnSearchGamePath.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSearchGamePath.HoverTextColor = System.Drawing.Color.White;
             this.btnSearchGamePath.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSearchGamePath.Location = new System.Drawing.Point(50, 454);
+            this.btnSearchGamePath.Location = new System.Drawing.Point(31, 488);
+            this.btnSearchGamePath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchGamePath.Name = "btnSearchGamePath";
-            this.btnSearchGamePath.Size = new System.Drawing.Size(112, 34);
+            this.btnSearchGamePath.Size = new System.Drawing.Size(149, 42);
             this.btnSearchGamePath.TabIndex = 19;
             this.btnSearchGamePath.TextColor = System.Drawing.Color.White;
             this.btnSearchGamePath.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -236,9 +249,10 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel5.Location = new System.Drawing.Point(50, 440);
+            this.panel5.Location = new System.Drawing.Point(31, 478);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(633, 2);
+            this.panel5.Size = new System.Drawing.Size(844, 2);
             this.panel5.TabIndex = 18;
             // 
             // text_gameFile
@@ -248,9 +262,10 @@
             this.text_gameFile.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_gameFile.ForeColor = System.Drawing.Color.Black;
             this.text_gameFile.HideSelection = false;
-            this.text_gameFile.Location = new System.Drawing.Point(50, 405);
+            this.text_gameFile.Location = new System.Drawing.Point(31, 434);
+            this.text_gameFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.text_gameFile.Name = "text_gameFile";
-            this.text_gameFile.Size = new System.Drawing.Size(630, 29);
+            this.text_gameFile.Size = new System.Drawing.Size(840, 36);
             this.text_gameFile.TabIndex = 17;
             this.text_gameFile.TabStop = false;
             this.text_gameFile.Text = "Game Path";
@@ -262,15 +277,16 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.label2.Location = new System.Drawing.Point(451, 20);
+            this.label2.Location = new System.Drawing.Point(238, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 56);
+            this.label2.Size = new System.Drawing.Size(294, 70);
             this.label2.TabIndex = 20;
             this.label2.Text = "New Game";
             // 
             // New_Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label2);
@@ -289,8 +305,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveGame);
             this.Controls.Add(this.previewBoxImg);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "New_Game";
-            this.Size = new System.Drawing.Size(1134, 673);
+            this.Size = new System.Drawing.Size(1299, 681);
             ((System.ComponentModel.ISupportInitialize)(this.previewBoxImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

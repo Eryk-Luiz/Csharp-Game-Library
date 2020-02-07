@@ -7,6 +7,8 @@ namespace Game_library
 {
     public partial class GameBanner : UserControl
     {
+
+        DateTime date1 = new DateTime();
         public GameBanner()
         {
             InitializeComponent();
@@ -60,6 +62,13 @@ namespace Game_library
         {
             get { return _gamepath; }
             set { _gamepath = value; }
+        }
+
+        private string _date;
+        public string date
+        {
+            get { return _date; }
+            set { _date = value; }
         }
 
 

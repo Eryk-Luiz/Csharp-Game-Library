@@ -47,6 +47,7 @@ namespace Game_library
                 game.img = line["GAME_IMG_FILE"].ToString();
                 game.gamepath = line["GAME_PATH"].ToString();
                 game.description = line["GAME_DESCRIPTION"].ToString();
+                game.date = line["DAT_GAME_INC"].ToString();
 
                 gamelist.Add(game);
 
