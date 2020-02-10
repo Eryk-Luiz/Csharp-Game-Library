@@ -11,6 +11,7 @@ namespace Game_library
         New_Game New = new New_Game();
         library library = new library();
         GameBanner game = new GameBanner();
+        editGame editGame = new editGame();
         #endregion
 
         public frmMain()
@@ -95,7 +96,14 @@ namespace Game_library
             library.getGameInfo();
 
         }
+
+        private void btnEditGame_Click(object sender, EventArgs e)
+        {
+            ChangePanelContent(editGame);
+        }
         #endregion
+
+
     }
 
 }

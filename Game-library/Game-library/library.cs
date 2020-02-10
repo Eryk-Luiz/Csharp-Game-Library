@@ -9,11 +9,14 @@ namespace Game_library
     public partial class library : UserControl
     {
 
+        editGame edit = new editGame();
+
         public library()
         {
             InitializeComponent();
 
         }
+
 
 
 
@@ -39,8 +42,12 @@ namespace Game_library
             //Para cada linha adicionada da table, ele cria um Novo UserControl(GameBanner). e Joga isso dentro do flowlayoutPanel.
             foreach (DataRow line in table.Rows)
             {
+                editGame edit = new editGame();
                 GameBanner game = new GameBanner();
                 List<GameBanner> gamelist = new List<GameBanner>();
+
+
+
 
                 var date = line["DAT_GAME_INC"].ToString();
                 string DataFormatada = date.Substring(0, 10);
@@ -51,10 +58,7 @@ namespace Game_library
                 game.gamepath = line["GAME_PATH"].ToString();
                 game.description = line["GAME_DESCRIPTION"].ToString();
                 game.date = DataFormatada;
-
                 gamelist.Add(game);
-
-
                 flowLayoutPanel1.Controls.Add(game);
                 gamelist.Clear();
             }
@@ -77,7 +81,7 @@ namespace Game_library
                 flowLayoutPanel1.Controls.Clear();
                 FilterGameList(text_filter_title.Text, texte_genteFilter.Text);
             }
-            else if (texte_genteFilter.Text != "Genre") 
+            else if (texte_genteFilter.Text != "Genre")
             {
                 flowLayoutPanel1.Controls.Clear();
                 FilterGameListGenre(texte_genteFilter.Text);
@@ -87,7 +91,7 @@ namespace Game_library
                 flowLayoutPanel1.Controls.Clear();
                 FilterGameList(text_filter_title.Text);
             }
-            
+
         }
 
 
@@ -107,7 +111,7 @@ namespace Game_library
 
             foreach (DataRow line in table.Rows)
             {
-                
+
 
 
                 GameBanner gameFiltered = new GameBanner();

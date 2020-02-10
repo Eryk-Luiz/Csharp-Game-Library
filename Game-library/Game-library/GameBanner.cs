@@ -81,9 +81,9 @@ namespace Game_library
         private void btnEditGame_Click(object sender, EventArgs e)
         {
             editGame game = new editGame();
-            frmGameEdit gameEdit = new frmGameEdit();
+            
             game.GetGameToEdit(title);
-            gameEdit.ShowDialog();
+            
         }
     }
 }

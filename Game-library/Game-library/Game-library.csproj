@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -106,12 +106,6 @@
     <Compile Include="GameBanner.Designer.cs">
       <DependentUpon>GameBanner.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameEdit.Designer.cs">
-      <DependentUpon>GameEdit.cs</DependentUpon>
-    </Compile>
     <Compile Include="library.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,9 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameBanner.resx">
       <DependentUpon>GameBanner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GameEdit.resx">
-      <DependentUpon>GameEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="library.resx">
       <DependentUpon>library.cs</DependentUpon>

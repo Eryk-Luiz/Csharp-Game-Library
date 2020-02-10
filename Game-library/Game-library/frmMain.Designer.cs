@@ -40,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLibrary = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnEditGame = new XanderUI.XUIButton();
             this.HeaderPanel.SuspendLayout();
             this.PanelAsideLeft.SuspendLayout();
             this.SuspendLayout();
@@ -113,6 +114,7 @@
             // PanelAsideLeft
             // 
             this.PanelAsideLeft.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.PanelAsideLeft.Controls.Add(this.btnEditGame);
             this.PanelAsideLeft.Controls.Add(this.labelLoggedUser);
             this.PanelAsideLeft.Controls.Add(this.btnLibrary);
             this.PanelAsideLeft.Controls.Add(this.btnNewGame);
@@ -198,6 +200,29 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
             // 
+            // btnEditGame
+            // 
+            this.btnEditGame.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnEditGame.ButtonImage = null;
+            this.btnEditGame.ButtonStyle = XanderUI.XUIButton.Style.Material;
+            this.btnEditGame.ButtonText = "Edit Game";
+            this.btnEditGame.ClickBackColor = System.Drawing.Color.Transparent;
+            this.btnEditGame.ClickTextColor = System.Drawing.Color.White;
+            this.btnEditGame.CornerRadius = 5;
+            this.btnEditGame.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditGame.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnEditGame.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
+            this.btnEditGame.HoverTextColor = System.Drawing.Color.White;
+            this.btnEditGame.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btnEditGame.Location = new System.Drawing.Point(-2, 248);
+            this.btnEditGame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditGame.Name = "btnEditGame";
+            this.btnEditGame.Size = new System.Drawing.Size(185, 73);
+            this.btnEditGame.TabIndex = 7;
+            this.btnEditGame.TextColor = System.Drawing.Color.White;
+            this.btnEditGame.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnEditGame.Click += new System.EventHandler(this.btnEditGame_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -233,5 +258,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private XanderUI.XUIButton btnLibrary;
         public System.Windows.Forms.Panel panelLibrary;
+        private XanderUI.XUIButton btnEditGame;
     }
 }
