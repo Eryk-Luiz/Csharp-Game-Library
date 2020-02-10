@@ -12,8 +12,6 @@ namespace Game_library
         public static string conString;
         public static string imgSource;
 
-
-
         //Verifica se existe o Diretório no Computador do usuário
         public static void CreateDataDirectory()
         {
@@ -42,7 +40,7 @@ namespace Game_library
 
         }
 
-
+        //Método que Cria o Banco 
         public static void CreatingDataBase()
         {
             // Cria o banco de Dados
@@ -82,9 +80,6 @@ namespace Game_library
                 MessageBox.Show("Erro ao se conectar com o Banco de Dados");
             }
         }
-
-
-
 
     }
 }

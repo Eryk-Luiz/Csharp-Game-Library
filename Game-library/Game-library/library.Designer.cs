@@ -85,7 +85,7 @@
             this.btnFilter.TextColor = System.Drawing.Color.White;
             this.btnFilter.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            this.btnFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnFilter_KeyDown);
+            
             // 
             // panel1
             // 

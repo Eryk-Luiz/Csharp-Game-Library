@@ -6,9 +6,12 @@ namespace Game_library
     public partial class frmMain : Form
     {
 
+
+        #region Instancias de outros Formulários e userControls.
         New_Game New = new New_Game();
         library library = new library();
         GameBanner game = new GameBanner();
+        #endregion
 
         public frmMain()
         {
@@ -28,7 +31,10 @@ namespace Game_library
             ChangePanelContent(library);
         }
 
+
         #region WindowState
+
+
 
         private void panel5_Click(object sender, EventArgs e)
         {
@@ -70,27 +76,25 @@ namespace Game_library
         #endregion
 
 
-        #region On Click, aletera conteúdo do Panel
+        #region Aletera o Conteúdo de cada panel(UserControl)
         public void ChangePanelContent(Control Button)
         {
             panelLibrary.Controls.Clear();
             panelLibrary.Controls.Add(Button);
         }
         
-
-        private void btnLibrary_Click(object sender, EventArgs e)
+        private void btnNewGame_Click(object sender, EventArgs e)
         {
             ChangePanelContent(New);
         }
 
-        private void xuiButton1_Click(object sender, EventArgs e)
+        private void btnLibrary_Click(object sender, EventArgs e)
         {
             ChangePanelContent(library);
             library.flowLayoutPanel1.Controls.Clear();
             library.getGameInfo();
 
         }
-
         #endregion
     }
 

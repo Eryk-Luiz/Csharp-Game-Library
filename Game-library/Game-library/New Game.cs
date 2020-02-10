@@ -9,10 +9,13 @@ namespace Game_library
 {
     public partial class New_Game : UserControl
     {
+
+        public string Finalpath;
+
         public New_Game()
         {
             InitializeComponent();
-            
+
         }
 
         #region Text Box Events
@@ -105,6 +108,9 @@ namespace Game_library
 
         #endregion
 
+
+        #region Button Events
+
         private void btnSaveGame_Click(object sender, EventArgs e)
         {
 
@@ -128,6 +134,54 @@ namespace Game_library
 
         }
 
+        private void btnSearchImg_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog imgfile = new OpenFileDialog();
+            imgfile.Filter = "*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            if (imgfile.ShowDialog() == DialogResult.OK)
+            {
+
+
+
+                text_imgFile.Text = imgfile.FileName;
+                previewBoxImg.BackgroundImage = Image.FromFile(text_imgFile.Text);
+
+            }
+            else
+            {
+                text_imgFile.Text = "Image File";
+                previewBoxImg.BackgroundImage = Properties.Resources.Logo_ico;
+            }
+
+
+
+        }
+
+        private void btnSearchGamePath_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog imgfile1 = new OpenFileDialog();
+            imgfile1.Filter = "All files (*.*)|*.*";
+            imgfile1.ShowDialog();
+            text_gameFile.Text = imgfile1.FileName;
+        }
+
+        #endregion
+
+
+        //método que limpa os TextBoxes
+        public void Clear()
+        {
+            text_title.Text = "Tittle";
+            text_genre.Text = "Genre";
+            text_imgFile.Text = "Image File";
+            text_gameFile.Text = "Game Path";
+            text_description.Text = "Description";
+
+            previewBoxImg.BackgroundImage = Properties.Resources.Logo_ico;
+        }
+
+        //Método que Cria a Tabela de Games no Banco Local
         public void CreatingGameTable()
         {
 
@@ -183,6 +237,7 @@ namespace Game_library
 
         }
 
+        //método que insere os registros na tabela
         public static void InsertGameInfo(string title, string genre, string imgFile, string gamePath, string gameDesc)
         {
             SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
@@ -206,74 +261,5 @@ namespace Game_library
             command.Dispose();
             connection.Close();
         }
-
-        public string Finalpath;
-        private void btnSearchImg_Click(object sender, EventArgs e)
-        {
-           
-            OpenFileDialog imgfile = new OpenFileDialog();
-            imgfile.Filter = "*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
-            if (imgfile.ShowDialog() == DialogResult.OK)
-            {
-                
-
-                
-                text_imgFile.Text = imgfile.FileName;
-                previewBoxImg.BackgroundImage = Image.FromFile(text_imgFile.Text);
-                
-            }
-            else
-            {
-                text_imgFile.Text = "Image File";
-                previewBoxImg.BackgroundImage = Properties.Resources.Logo_ico;
-            }
-
-            
-
-        }
-
-        private void Imgfile_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void btnSearchGamePath_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog imgfile1 = new OpenFileDialog();
-            imgfile1.Filter = "All files (*.*)|*.*";
-            imgfile1.ShowDialog();
-            text_gameFile.Text = imgfile1.FileName;
-        }
-
-        private void text_imgFile_TextChanged(object sender, EventArgs e)
-        {
-
-            if (text_imgFile.Text != "Image File")
-            {
-
-            }
-            else
-            {
-                return;
-            }
-
-
-
-        }
-
-        public void Clear()
-        {
-            text_title.Text = "Tittle";
-            text_genre.Text = "Genre";
-            text_imgFile.Text = "Image File";
-            text_gameFile.Text = "Game Path";
-            text_description.Text = "Description";
-
-            previewBoxImg.BackgroundImage = Properties.Resources.Logo_ico;
-
-
-        }
-
-
     }
 }

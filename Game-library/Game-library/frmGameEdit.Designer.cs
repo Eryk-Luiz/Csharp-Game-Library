@@ -1,6 +1,6 @@
 ﻿namespace Game_library
 {
-    partial class GameEdit
+    partial class frmGameEdit
     {
         /// <summary>
         /// Required designer variable.

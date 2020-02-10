@@ -185,7 +185,6 @@
             this.text_imgFile.TabStop = false;
             this.text_imgFile.Text = "Image File";
             this.text_imgFile.Click += new System.EventHandler(this.text_imgFile_Click);
-            this.text_imgFile.TextChanged += new System.EventHandler(this.text_imgFile_TextChanged);
             this.text_imgFile.Leave += new System.EventHandler(this.text_imgFile_Leave);
             // 
             // btnSearchImg

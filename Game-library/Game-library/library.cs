@@ -15,14 +15,16 @@ namespace Game_library
 
         }
 
+
+
+        //Método para pesquisar todos os registros do banco da tabela "games".
         public void getGameInfo()
         {
+            //Faz a Conexão com o banco de Dados
             SqlCeConnection connection = new SqlCeConnection("Data Source = " + CreateDataBase.conString);
             connection.Open();
 
-
-
-
+            //Cria um Table, faz a query e preenche o table com as informações.
             DataTable table = new DataTable();
 
             string query = "SELECT * FROM Games ORDER BY DAT_GAME_INC DESC";
@@ -30,13 +32,11 @@ namespace Game_library
             SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
             adapter.Fill(table);
 
+            //fecha a conexão e termina o comando do Adapter.
             adapter.Dispose();
             connection.Close();
 
-
-
-
-
+            //Para cada linha adicionada da table, ele cria um Novo UserControl(GameBanner). e Joga isso dentro do flowlayoutPanel.
             foreach (DataRow line in table.Rows)
             {
                 GameBanner game = new GameBanner();
@@ -62,6 +62,8 @@ namespace Game_library
 
         }
 
+
+        //Botão para filtrar o registros por Nome do Jogo ou Genêro
         private void btnFilter_Click(object sender, EventArgs e)
         {
 
@@ -75,15 +77,22 @@ namespace Game_library
                 flowLayoutPanel1.Controls.Clear();
                 FilterGameList(text_filter_title.Text, texte_genteFilter.Text);
             }
+            else if (texte_genteFilter.Text != "Genre") 
+            {
+                flowLayoutPanel1.Controls.Clear();
+                FilterGameListGenre(texte_genteFilter.Text);
+            }
             else
             {
                 flowLayoutPanel1.Controls.Clear();
                 FilterGameList(text_filter_title.Text);
             }
             
-
         }
 
+
+
+        #region Métodos para filtrar o FlowLayoutPanel
         public void FilterGameList(string gameTittle)
         {
             SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
@@ -121,6 +130,47 @@ namespace Game_library
                 gamelistFiltered.Clear();
             }
 
+
+
+        }
+
+        public void FilterGameListGenre(string genre)
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
+            connection.Open();
+
+
+            DataTable table = new DataTable();
+
+            string query = "SELECT * FROM Games WHERE GAME_GENRE ='" + genre + "'";
+            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
+            adapter.Fill(table);
+
+            foreach (DataRow line in table.Rows)
+            {
+                GameBanner game = new GameBanner();
+                List<GameBanner> gamelist = new List<GameBanner>();
+
+
+                GameBanner gameFiltered = new GameBanner();
+                List<GameBanner> gamelistFiltered = new List<GameBanner>();
+
+                var date = line["DAT_GAME_INC"].ToString();
+                string DataFormatada = date.Substring(0, 10);
+
+                gameFiltered.title = line["GAME_TITLE"].ToString();
+                gameFiltered.genre = line["GAME_GENRE"].ToString();
+                gameFiltered.img = line["GAME_IMG_FILE"].ToString();
+                gameFiltered.gamepath = line["GAME_PATH"].ToString();
+                gameFiltered.description = line["GAME_DESCRIPTION"].ToString();
+                gameFiltered.date = DataFormatada;
+
+                gamelist.Add(gameFiltered);
+
+
+                flowLayoutPanel1.Controls.Add(gameFiltered);
+                gamelist.Clear();
+            }
 
 
         }
@@ -166,7 +216,11 @@ namespace Game_library
 
 
         }
+        #endregion
 
+
+
+        #region Funcionalidades Visuais e Funcionalidade de Filtrar ao apertar a tecla ENTER.
         private void text_filter_title_Click(object sender, EventArgs e)
         {
             if (text_filter_title.Text == "Game")
@@ -197,11 +251,6 @@ namespace Game_library
             {
                 texte_genteFilter.Text = "Genre";
             }
-        }
-
-        private void btnFilter_KeyDown(object sender, KeyEventArgs e)
-        {
-            
         }
 
         private void texte_genteFilter_KeyDown(object sender, KeyEventArgs e)
@@ -250,5 +299,6 @@ namespace Game_library
                 }
             }
         }
+        #endregion
     }
 }

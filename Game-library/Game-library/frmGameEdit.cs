@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Game_library
 {
-    public partial class GameEdit : Form
+    public partial class frmGameEdit : Form
     {
-        public GameEdit()
+        public frmGameEdit()
         {
             GameBanner gamebanner = new GameBanner();
             editGame game = new editGame();

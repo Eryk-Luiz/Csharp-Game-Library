@@ -16,9 +16,7 @@ namespace Game_library
             InitializeComponent();
         }
 
-        
-
-        #region Props
+        #region Propriedades do UserControl
 
         [Category("Custom props")]
         private string _Title;
@@ -75,21 +73,17 @@ namespace Game_library
 
         #endregion
 
-        private void xuiButton1_Click(object sender, EventArgs e)
+        private void btnStartGame_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(gamepath);
         }
 
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnEditGame_Click(object sender, EventArgs e)
         {
-            editGame game1 = new editGame();
-            GameEdit game = new GameEdit();
-            game1.GetGameToEdit(title);
-            game.ShowDialog();
-            
-
-
+            editGame game = new editGame();
+            frmGameEdit gameEdit = new frmGameEdit();
+            game.GetGameToEdit(title);
+            gameEdit.ShowDialog();
         }
     }
 }
