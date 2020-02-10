@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlServerCe;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Game_library
@@ -13,21 +14,6 @@ namespace Game_library
             InitializeComponent();
             
         }
-
-
-        private void btnSaveGame_Click(object sender, EventArgs e)
-        {
-
-            library library = new library();
-            InsertGameInfo(text_title.Text, text_genre.Text, text_imgFile.Text, text_gameFile.Text, text_description.Text);
-            MessageBox.Show("Novo Jogo Salvo");
-            Clear();
-
-
-        }
-
-
-
 
         #region Text Box Events
 
@@ -119,8 +105,28 @@ namespace Game_library
 
         #endregion
 
+        private void btnSaveGame_Click(object sender, EventArgs e)
+        {
 
 
+            if (File.Exists(text_imgFile.Text))
+            {
+                FileInfo info = new FileInfo(text_imgFile.Text);
+
+                File.Copy(text_imgFile.Text, CreateDataBase.imgSource + info.Name);
+
+                Finalpath = CreateDataBase.imgSource + info.Name;
+
+            }
+            InsertGameInfo(text_title.Text, text_genre.Text, Finalpath, text_gameFile.Text, text_description.Text);
+            MessageBox.Show("Novo Jogo Salvo");
+            Directory.CreateDirectory(CreateDataBase.imgSource);
+
+
+            Clear();
+
+
+        }
 
         public void CreatingGameTable()
         {
@@ -177,7 +183,6 @@ namespace Game_library
 
         }
 
-
         public static void InsertGameInfo(string title, string genre, string imgFile, string gamePath, string gameDesc)
         {
             SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
@@ -202,13 +207,34 @@ namespace Game_library
             connection.Close();
         }
 
+        public string Finalpath;
         private void btnSearchImg_Click(object sender, EventArgs e)
         {
+           
             OpenFileDialog imgfile = new OpenFileDialog();
-            imgfile.Filter = "*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
-            imgfile.ShowDialog();
-            text_imgFile.Text = imgfile.FileName;
-            previewBoxImg.BackgroundImage = Image.FromFile(text_imgFile.Text);
+            imgfile.Filter = "*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            if (imgfile.ShowDialog() == DialogResult.OK)
+            {
+                
+
+                
+                text_imgFile.Text = imgfile.FileName;
+                previewBoxImg.BackgroundImage = Image.FromFile(text_imgFile.Text);
+                
+            }
+            else
+            {
+                text_imgFile.Text = "Image File";
+                previewBoxImg.BackgroundImage = Properties.Resources.Logo_ico;
+            }
+
+            
+
+        }
+
+        private void Imgfile_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnSearchGamePath_Click(object sender, EventArgs e)
@@ -218,8 +244,6 @@ namespace Game_library
             imgfile1.ShowDialog();
             text_gameFile.Text = imgfile1.FileName;
         }
-
-
 
         private void text_imgFile_TextChanged(object sender, EventArgs e)
         {

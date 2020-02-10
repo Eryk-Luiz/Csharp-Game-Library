@@ -54,7 +54,7 @@
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1482, 66);
+            this.HeaderPanel.Size = new System.Drawing.Size(1112, 54);
             this.HeaderPanel.TabIndex = 1;
             this.HeaderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmMain_MouseDown);
             // 
@@ -69,10 +69,9 @@
             this.logo.Image = null;
             this.logo.IsElipse = false;
             this.logo.IsParallax = false;
-            this.logo.Location = new System.Drawing.Point(635, -18);
-            this.logo.Margin = new System.Windows.Forms.Padding(4);
+            this.logo.Location = new System.Drawing.Point(476, -15);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(147, 102);
+            this.logo.Size = new System.Drawing.Size(110, 83);
             this.logo.TabIndex = 5;
             this.logo.Text = "xuiCustomPictureBox1";
             // 
@@ -80,10 +79,9 @@
             // 
             this.WindowsMinimize.BackgroundImage = global::Game_library.Properties.Resources.minimizeWindow_24px;
             this.WindowsMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.WindowsMinimize.Location = new System.Drawing.Point(1370, 13);
-            this.WindowsMinimize.Margin = new System.Windows.Forms.Padding(4);
+            this.WindowsMinimize.Location = new System.Drawing.Point(1028, 11);
             this.WindowsMinimize.Name = "WindowsMinimize";
-            this.WindowsMinimize.Size = new System.Drawing.Size(44, 37);
+            this.WindowsMinimize.Size = new System.Drawing.Size(33, 30);
             this.WindowsMinimize.TabIndex = 4;
             this.WindowsMinimize.Click += new System.EventHandler(this.panel6_Click);
             // 
@@ -91,10 +89,9 @@
             // 
             this.WindowClose.BackgroundImage = global::Game_library.Properties.Resources.closeWindow_24px;
             this.WindowClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.WindowClose.Location = new System.Drawing.Point(1422, 13);
-            this.WindowClose.Margin = new System.Windows.Forms.Padding(4);
+            this.WindowClose.Location = new System.Drawing.Point(1066, 11);
             this.WindowClose.Name = "WindowClose";
-            this.WindowClose.Size = new System.Drawing.Size(44, 37);
+            this.WindowClose.Size = new System.Drawing.Size(33, 30);
             this.WindowClose.TabIndex = 3;
             this.WindowClose.Click += new System.EventHandler(this.panel5_Click);
             // 
@@ -102,10 +99,9 @@
             // 
             this.labelLoggedUser.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoggedUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.labelLoggedUser.Location = new System.Drawing.Point(13, 620);
-            this.labelLoggedUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLoggedUser.Location = new System.Drawing.Point(10, 504);
             this.labelLoggedUser.Name = "labelLoggedUser";
-            this.labelLoggedUser.Size = new System.Drawing.Size(156, 43);
+            this.labelLoggedUser.Size = new System.Drawing.Size(117, 35);
             this.labelLoggedUser.TabIndex = 6;
             this.labelLoggedUser.Text = "USER";
             this.labelLoggedUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -118,10 +114,10 @@
             this.PanelAsideLeft.Controls.Add(this.btnLibrary);
             this.PanelAsideLeft.Controls.Add(this.panel1);
             this.PanelAsideLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelAsideLeft.Location = new System.Drawing.Point(0, 66);
-            this.PanelAsideLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelAsideLeft.Location = new System.Drawing.Point(0, 54);
+            this.PanelAsideLeft.Margin = new System.Windows.Forms.Padding(2);
             this.PanelAsideLeft.Name = "PanelAsideLeft";
-            this.PanelAsideLeft.Size = new System.Drawing.Size(183, 681);
+            this.PanelAsideLeft.Size = new System.Drawing.Size(137, 553);
             this.PanelAsideLeft.TabIndex = 2;
             // 
             // xuiButton1
@@ -138,10 +134,10 @@
             this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.xuiButton1.HoverTextColor = System.Drawing.Color.White;
             this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton1.Location = new System.Drawing.Point(-3, 171);
-            this.xuiButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xuiButton1.Location = new System.Drawing.Point(-2, 139);
+            this.xuiButton1.Margin = new System.Windows.Forms.Padding(2);
             this.xuiButton1.Name = "xuiButton1";
-            this.xuiButton1.Size = new System.Drawing.Size(185, 73);
+            this.xuiButton1.Size = new System.Drawing.Size(139, 59);
             this.xuiButton1.TabIndex = 3;
             this.xuiButton1.TextColor = System.Drawing.Color.White;
             this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -161,10 +157,10 @@
             this.btnLibrary.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnLibrary.HoverTextColor = System.Drawing.Color.White;
             this.btnLibrary.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnLibrary.Location = new System.Drawing.Point(-3, 94);
-            this.btnLibrary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLibrary.Location = new System.Drawing.Point(-2, 76);
+            this.btnLibrary.Margin = new System.Windows.Forms.Padding(2);
             this.btnLibrary.Name = "btnLibrary";
-            this.btnLibrary.Size = new System.Drawing.Size(185, 73);
+            this.btnLibrary.Size = new System.Drawing.Size(139, 59);
             this.btnLibrary.TabIndex = 1;
             this.btnLibrary.TextColor = System.Drawing.Color.White;
             this.btnLibrary.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -175,18 +171,17 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 2);
+            this.panel1.Size = new System.Drawing.Size(137, 2);
             this.panel1.TabIndex = 0;
             // 
             // panelLibrary
             // 
             this.panelLibrary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLibrary.Location = new System.Drawing.Point(183, 66);
-            this.panelLibrary.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLibrary.Location = new System.Drawing.Point(137, 54);
             this.panelLibrary.Name = "panelLibrary";
-            this.panelLibrary.Size = new System.Drawing.Size(1299, 681);
+            this.panelLibrary.Size = new System.Drawing.Size(975, 553);
             this.panelLibrary.TabIndex = 3;
             // 
             // dataGridViewImageColumn1
@@ -196,21 +191,19 @@
             this.dataGridViewImageColumn1.Image = global::Game_library.Properties.Resources.Logo_ico;
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 125;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1482, 747);
+            this.ClientSize = new System.Drawing.Size(1112, 607);
             this.Controls.Add(this.panelLibrary);
             this.Controls.Add(this.PanelAsideLeft);
             this.Controls.Add(this.HeaderPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game Library";
@@ -232,6 +225,6 @@
         private XanderUI.XUIButton btnLibrary;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private XanderUI.XUIButton xuiButton1;
-        private System.Windows.Forms.Panel panelLibrary;
+        public System.Windows.Forms.Panel panelLibrary;
     }
 }

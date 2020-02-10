@@ -8,15 +8,13 @@ namespace Game_library
 
         New_Game New = new New_Game();
         library library = new library();
+        GameBanner game = new GameBanner();
 
         public frmMain()
         {
             InitializeComponent();
 
-
-
-            New.CreatingGameTable();
-            library.getGameInfo();
+            
 
             labelLoggedUser.Text = frmLogin.User;
 
@@ -25,6 +23,8 @@ namespace Game_library
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            New.CreatingGameTable();
+            library.getGameInfo();
             ChangePanelContent(library);
         }
 
@@ -71,14 +71,12 @@ namespace Game_library
 
 
         #region On Click, aletera conteúdo do Panel
-        public void ChangePanelContent(Control buttons)
+        public void ChangePanelContent(Control Button)
         {
             panelLibrary.Controls.Clear();
-
-            panelLibrary.Dock = DockStyle.Fill;
-
-            panelLibrary.Controls.Add(buttons);
+            panelLibrary.Controls.Add(Button);
         }
+        
 
         private void btnLibrary_Click(object sender, EventArgs e)
         {

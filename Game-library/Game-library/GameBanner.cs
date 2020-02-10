@@ -2,22 +2,21 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Game_library
 {
     public partial class GameBanner : UserControl
     {
+        
 
-        DateTime date1 = new DateTime();
+        
         public GameBanner()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Modal");
-        }
+        
 
         #region Props
 
@@ -64,11 +63,13 @@ namespace Game_library
             set { _gamepath = value; }
         }
 
+
+
         private string _date;
         public string date
         {
             get { return _date; }
-            set { _date = value; }
+            set { _date = value; label_date.Text = value; }
         }
 
 
@@ -77,6 +78,18 @@ namespace Game_library
         private void xuiButton1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(gamepath);
+        }
+
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            editGame game1 = new editGame();
+            GameEdit game = new GameEdit();
+            game1.GetGameToEdit(title);
+            game.ShowDialog();
+            
+
+
         }
     }
 }
