@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data;
+using System.IO;
 
 namespace Game_library
 {
@@ -75,9 +76,18 @@ namespace Game_library
 
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(gamepath);
-        }
 
+            
+            if (File.Exists(gamepath))
+            {
+                System.Diagnostics.Process.Start(gamepath);
+            }
+            else
+            {
+                MessageBox.Show("Game Path Not Found");
+            }
+            
+        }
         private void btnEditGame_Click(object sender, EventArgs e)
         {
             editGame game = new editGame();

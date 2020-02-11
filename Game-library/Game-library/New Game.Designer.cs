@@ -50,14 +50,15 @@
             // previewBoxImg
             // 
             this.previewBoxImg.BackgroundImage = global::Game_library.Properties.Resources.Logo;
-            this.previewBoxImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.previewBoxImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.previewBoxImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.previewBoxImg.InitialImage = global::Game_library.Properties.Resources.Logo;
-            this.previewBoxImg.Location = new System.Drawing.Point(741, 40);
+            this.previewBoxImg.Location = new System.Drawing.Point(677, 61);
             this.previewBoxImg.Name = "previewBoxImg";
-            this.previewBoxImg.Size = new System.Drawing.Size(205, 233);
+            this.previewBoxImg.Size = new System.Drawing.Size(270, 329);
             this.previewBoxImg.TabIndex = 0;
             this.previewBoxImg.TabStop = false;
+            this.previewBoxImg.BackgroundImageLayoutChanged += new System.EventHandler(this.previewBoxImg_BackgroundImageLayoutChanged);
             // 
             // btnSaveGame
             // 
@@ -85,7 +86,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(748, 14);
+            this.label1.Location = new System.Drawing.Point(715, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 23);
             this.label1.TabIndex = 7;
@@ -111,7 +112,7 @@
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(378, 29);
             this.text_title.TabIndex = 0;
-            this.text_title.Text = "Tittle";
+            this.text_title.Text = "Title";
             this.text_title.Click += new System.EventHandler(this.text_title_Click);
             this.text_title.Leave += new System.EventHandler(this.text_title_Leave);
             // 
@@ -263,11 +264,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.label2.Location = new System.Drawing.Point(178, 0);
+            this.label2.Location = new System.Drawing.Point(371, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 56);
             this.label2.TabIndex = 20;
-            this.label2.Text = "New Game";
+            this.label2.Text = "NEW GAME";
             // 
             // New_Game
             // 

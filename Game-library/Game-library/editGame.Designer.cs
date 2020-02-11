@@ -53,19 +53,17 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel3.Location = new System.Drawing.Point(21, 799);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Location = new System.Drawing.Point(16, 649);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1467, 2);
+            this.panel3.Size = new System.Drawing.Size(1100, 2);
             this.panel3.TabIndex = 32;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(999, 111);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(749, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 28);
+            this.label1.Size = new System.Drawing.Size(188, 23);
             this.label1.TabIndex = 28;
             this.label1.Text = "PreView";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,7 +73,7 @@
             this.btnSaveEditGame.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
             this.btnSaveEditGame.ButtonImage = null;
             this.btnSaveEditGame.ButtonStyle = XanderUI.XUIButton.Style.Material;
-            this.btnSaveEditGame.ButtonText = "Save";
+            this.btnSaveEditGame.ButtonText = "EDIT";
             this.btnSaveEditGame.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSaveEditGame.ClickTextColor = System.Drawing.Color.White;
             this.btnSaveEditGame.CornerRadius = 5;
@@ -85,13 +83,13 @@
             this.btnSaveEditGame.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSaveEditGame.HoverTextColor = System.Drawing.Color.White;
             this.btnSaveEditGame.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSaveEditGame.Location = new System.Drawing.Point(1061, 549);
-            this.btnSaveEditGame.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveEditGame.Location = new System.Drawing.Point(796, 446);
             this.btnSaveEditGame.Name = "btnSaveEditGame";
-            this.btnSaveEditGame.Size = new System.Drawing.Size(201, 63);
+            this.btnSaveEditGame.Size = new System.Drawing.Size(151, 42);
             this.btnSaveEditGame.TabIndex = 27;
             this.btnSaveEditGame.TextColor = System.Drawing.Color.White;
             this.btnSaveEditGame.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnSaveEditGame.Click += new System.EventHandler(this.btnSaveEditGame_Click);
             // 
             // previewBoxImg
             // 
@@ -99,10 +97,9 @@
             this.previewBoxImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.previewBoxImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.previewBoxImg.InitialImage = global::Game_library.Properties.Resources.Logo;
-            this.previewBoxImg.Location = new System.Drawing.Point(989, 143);
-            this.previewBoxImg.Margin = new System.Windows.Forms.Padding(4);
+            this.previewBoxImg.Location = new System.Drawing.Point(742, 116);
             this.previewBoxImg.Name = "previewBoxImg";
-            this.previewBoxImg.Size = new System.Drawing.Size(273, 286);
+            this.previewBoxImg.Size = new System.Drawing.Size(205, 233);
             this.previewBoxImg.TabIndex = 22;
             this.previewBoxImg.TabStop = false;
             // 
@@ -113,20 +110,21 @@
             this.text_title_edit.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_title_edit.ForeColor = System.Drawing.Color.Black;
             this.text_title_edit.HideSelection = false;
-            this.text_title_edit.Location = new System.Drawing.Point(32, 132);
-            this.text_title_edit.Margin = new System.Windows.Forms.Padding(4);
+            this.text_title_edit.Location = new System.Drawing.Point(24, 107);
+            this.text_title_edit.MaxLength = 50;
             this.text_title_edit.Name = "text_title_edit";
-            this.text_title_edit.Size = new System.Drawing.Size(504, 36);
+            this.text_title_edit.Size = new System.Drawing.Size(378, 29);
             this.text_title_edit.TabIndex = 21;
             this.text_title_edit.Text = "Tittle";
+            this.text_title_edit.Click += new System.EventHandler(this.text_title_edit_Click);
+            this.text_title_edit.Leave += new System.EventHandler(this.text_title_Leave);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel1.Location = new System.Drawing.Point(10, 90);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(8, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1290, 2);
+            this.panel1.Size = new System.Drawing.Size(968, 2);
             this.panel1.TabIndex = 29;
             // 
             // text_genre_edit
@@ -136,20 +134,20 @@
             this.text_genre_edit.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_genre_edit.ForeColor = System.Drawing.Color.Black;
             this.text_genre_edit.HideSelection = false;
-            this.text_genre_edit.Location = new System.Drawing.Point(32, 228);
-            this.text_genre_edit.Margin = new System.Windows.Forms.Padding(4);
+            this.text_genre_edit.Location = new System.Drawing.Point(24, 185);
+            this.text_genre_edit.MaxLength = 50;
             this.text_genre_edit.Name = "text_genre_edit";
-            this.text_genre_edit.Size = new System.Drawing.Size(555, 36);
+            this.text_genre_edit.Size = new System.Drawing.Size(416, 29);
             this.text_genre_edit.TabIndex = 23;
             this.text_genre_edit.Text = "Genre";
+            this.text_genre_edit.Leave += new System.EventHandler(this.text_genre_Leave);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel2.Location = new System.Drawing.Point(32, 271);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(24, 220);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(557, 2);
+            this.panel2.Size = new System.Drawing.Size(418, 2);
             this.panel2.TabIndex = 30;
             // 
             // text_imgFile_edit
@@ -160,21 +158,21 @@
             this.text_imgFile_edit.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_imgFile_edit.ForeColor = System.Drawing.Color.Black;
             this.text_imgFile_edit.HideSelection = false;
-            this.text_imgFile_edit.Location = new System.Drawing.Point(32, 296);
-            this.text_imgFile_edit.Margin = new System.Windows.Forms.Padding(4);
+            this.text_imgFile_edit.Location = new System.Drawing.Point(24, 240);
             this.text_imgFile_edit.Name = "text_imgFile_edit";
-            this.text_imgFile_edit.Size = new System.Drawing.Size(843, 36);
+            this.text_imgFile_edit.Size = new System.Drawing.Size(632, 29);
             this.text_imgFile_edit.TabIndex = 31;
             this.text_imgFile_edit.TabStop = false;
             this.text_imgFile_edit.Text = "Image File";
+            this.text_imgFile_edit.Click += new System.EventHandler(this.text_imgFile_Click);
+            this.text_imgFile_edit.Leave += new System.EventHandler(this.text_imgFile_Leave);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel4.Location = new System.Drawing.Point(35, 339);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Location = new System.Drawing.Point(26, 275);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(843, 2);
+            this.panel4.Size = new System.Drawing.Size(632, 2);
             this.panel4.TabIndex = 33;
             // 
             // btnSearchImg
@@ -192,13 +190,13 @@
             this.btnSearchImg.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSearchImg.HoverTextColor = System.Drawing.Color.White;
             this.btnSearchImg.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSearchImg.Location = new System.Drawing.Point(32, 349);
-            this.btnSearchImg.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchImg.Location = new System.Drawing.Point(24, 284);
             this.btnSearchImg.Name = "btnSearchImg";
-            this.btnSearchImg.Size = new System.Drawing.Size(149, 42);
+            this.btnSearchImg.Size = new System.Drawing.Size(112, 34);
             this.btnSearchImg.TabIndex = 24;
             this.btnSearchImg.TextColor = System.Drawing.Color.White;
             this.btnSearchImg.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnSearchImg.Click += new System.EventHandler(this.btnSearchImg_Click);
             // 
             // text_gameFile_edit
             // 
@@ -208,21 +206,21 @@
             this.text_gameFile_edit.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_gameFile_edit.ForeColor = System.Drawing.Color.Black;
             this.text_gameFile_edit.HideSelection = false;
-            this.text_gameFile_edit.Location = new System.Drawing.Point(35, 425);
-            this.text_gameFile_edit.Margin = new System.Windows.Forms.Padding(4);
+            this.text_gameFile_edit.Location = new System.Drawing.Point(26, 345);
             this.text_gameFile_edit.Name = "text_gameFile_edit";
-            this.text_gameFile_edit.Size = new System.Drawing.Size(840, 36);
+            this.text_gameFile_edit.Size = new System.Drawing.Size(630, 29);
             this.text_gameFile_edit.TabIndex = 34;
             this.text_gameFile_edit.TabStop = false;
             this.text_gameFile_edit.Text = "Game Path";
+            this.text_gameFile_edit.Click += new System.EventHandler(this.text_gameFile_Click);
+            this.text_gameFile_edit.Leave += new System.EventHandler(this.text_gameFile_Leave);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel5.Location = new System.Drawing.Point(35, 468);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Location = new System.Drawing.Point(26, 380);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(844, 2);
+            this.panel5.Size = new System.Drawing.Size(633, 2);
             this.panel5.TabIndex = 35;
             // 
             // btnSearchGamePath
@@ -240,13 +238,13 @@
             this.btnSearchGamePath.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSearchGamePath.HoverTextColor = System.Drawing.Color.White;
             this.btnSearchGamePath.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSearchGamePath.Location = new System.Drawing.Point(35, 478);
-            this.btnSearchGamePath.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchGamePath.Location = new System.Drawing.Point(26, 388);
             this.btnSearchGamePath.Name = "btnSearchGamePath";
-            this.btnSearchGamePath.Size = new System.Drawing.Size(149, 42);
+            this.btnSearchGamePath.Size = new System.Drawing.Size(112, 34);
             this.btnSearchGamePath.TabIndex = 25;
             this.btnSearchGamePath.TextColor = System.Drawing.Color.White;
             this.btnSearchGamePath.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnSearchGamePath.Click += new System.EventHandler(this.btnSearchGamePath_Click);
             // 
             // text_description_edit
             // 
@@ -255,33 +253,37 @@
             this.text_description_edit.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_description_edit.ForeColor = System.Drawing.Color.Black;
             this.text_description_edit.HideSelection = false;
-            this.text_description_edit.Location = new System.Drawing.Point(32, 549);
-            this.text_description_edit.Margin = new System.Windows.Forms.Padding(4);
+            this.text_description_edit.Location = new System.Drawing.Point(24, 446);
             this.text_description_edit.Multiline = true;
             this.text_description_edit.Name = "text_description_edit";
-            this.text_description_edit.Size = new System.Drawing.Size(1009, 121);
+            this.text_description_edit.Size = new System.Drawing.Size(757, 99);
             this.text_description_edit.TabIndex = 26;
             this.text_description_edit.Text = "Description";
+            this.text_description_edit.Click += new System.EventHandler(this.text_description_Click);
+            this.text_description_edit.Leave += new System.EventHandler(this.text_description_Leave);
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel6.Location = new System.Drawing.Point(35, 176);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Location = new System.Drawing.Point(26, 143);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(557, 2);
+            this.panel6.Size = new System.Drawing.Size(418, 2);
             this.panel6.TabIndex = 31;
             // 
             // comboBox1
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllSystemSources;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ItemHeight = 36;
-            this.comboBox1.Location = new System.Drawing.Point(393, 24);
+            this.comboBox1.ItemHeight = 29;
+            this.comboBox1.Items.AddRange(new object[] {
+            "\"\""});
+            this.comboBox1.Location = new System.Drawing.Point(457, 20);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.MaxDropDownItems = 100;
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(342, 44);
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.comboBox1.Size = new System.Drawing.Size(258, 37);
             this.comboBox1.TabIndex = 36;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -292,10 +294,9 @@
             this.game.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.game.ForeColor = System.Drawing.Color.Black;
             this.game.HideSelection = false;
-            this.game.Location = new System.Drawing.Point(131, 28);
-            this.game.Margin = new System.Windows.Forms.Padding(4);
+            this.game.Location = new System.Drawing.Point(260, 23);
             this.game.Name = "game";
-            this.game.Size = new System.Drawing.Size(243, 36);
+            this.game.Size = new System.Drawing.Size(182, 29);
             this.game.TabIndex = 37;
             this.game.Text = "Choose a Game";
             // 
@@ -304,7 +305,7 @@
             this.xuiButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
             this.xuiButton1.ButtonImage = null;
             this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.Material;
-            this.xuiButton1.ButtonText = "Apply";
+            this.xuiButton1.ButtonText = "DELETE";
             this.xuiButton1.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.xuiButton1.ClickTextColor = System.Drawing.Color.White;
             this.xuiButton1.CornerRadius = 5;
@@ -314,10 +315,9 @@
             this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.xuiButton1.HoverTextColor = System.Drawing.Color.White;
             this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton1.Location = new System.Drawing.Point(1065, 10);
-            this.xuiButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.xuiButton1.Location = new System.Drawing.Point(796, 503);
             this.xuiButton1.Name = "xuiButton1";
-            this.xuiButton1.Size = new System.Drawing.Size(201, 64);
+            this.xuiButton1.Size = new System.Drawing.Size(151, 42);
             this.xuiButton1.TabIndex = 38;
             this.xuiButton1.TextColor = System.Drawing.Color.White;
             this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -325,7 +325,7 @@
             // 
             // editGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.xuiButton1);
@@ -347,9 +347,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSaveEditGame);
             this.Controls.Add(this.previewBoxImg);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "editGame";
-            this.Size = new System.Drawing.Size(1300, 681);
+            this.Size = new System.Drawing.Size(975, 553);
             this.Load += new System.EventHandler(this.editGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.previewBoxImg)).EndInit();
             this.ResumeLayout(false);
@@ -375,7 +374,7 @@
         private System.Windows.Forms.TextBox text_description_edit;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox game;
-        private XanderUI.XUIButton xuiButton1;
         public System.Windows.Forms.ComboBox comboBox1;
+        private XanderUI.XUIButton xuiButton1;
     }
 }

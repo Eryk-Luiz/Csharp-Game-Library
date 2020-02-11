@@ -103,8 +103,6 @@ namespace Game_library
 
         #endregion
 
-
-
         //Verifica se usuário e senha dos TextBoxes, estão no banco de Dados
         public void VerifyUser()
         {

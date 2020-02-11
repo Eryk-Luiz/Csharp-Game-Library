@@ -35,8 +35,6 @@ namespace Game_library
 
         #region WindowState
 
-
-
         private void panel5_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -47,6 +45,7 @@ namespace Game_library
             this.WindowState = FormWindowState.Minimized;
         }
 
+        #endregion
 
         #region MoveWindow
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -66,16 +65,7 @@ namespace Game_library
             }
         }
 
-
-
-
-
-
-
         #endregion
-
-        #endregion
-
 
         #region Aletera o Conteúdo de cada panel(UserControl)
         public void ChangePanelContent(Control Button)
@@ -87,6 +77,7 @@ namespace Game_library
         private void btnNewGame_Click(object sender, EventArgs e)
         {
             ChangePanelContent(New);
+           
         }
 
         private void btnLibrary_Click(object sender, EventArgs e)
@@ -100,6 +91,7 @@ namespace Game_library
         private void btnEditGame_Click(object sender, EventArgs e)
         {
             ChangePanelContent(editGame);
+            editGame.LoadCombo();
         }
         #endregion
 

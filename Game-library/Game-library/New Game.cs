@@ -9,8 +9,9 @@ namespace Game_library
 {
     public partial class New_Game : UserControl
     {
-
+        public string gamePath;
         public string Finalpath;
+        public string imgPath;
 
         public New_Game()
         {
@@ -24,7 +25,7 @@ namespace Game_library
         //Click Events
         private void text_title_Click(object sender, EventArgs e)
         {
-            if (text_title.Text == "Tittle")
+            if (text_title.Text == "Title")
             {
                 text_title.Text = "";
             }
@@ -69,7 +70,7 @@ namespace Game_library
         {
             if (text_title.Text == "")
             {
-                text_title.Text = "Tittle";
+                text_title.Text = "Title";
             }
         }
 
@@ -111,41 +112,19 @@ namespace Game_library
 
         #region Button Events
 
-        private void btnSaveGame_Click(object sender, EventArgs e)
-        {
-
-
-            if (File.Exists(text_imgFile.Text))
-            {
-                FileInfo info = new FileInfo(text_imgFile.Text);
-
-                File.Copy(text_imgFile.Text, CreateDataBase.imgSource + info.Name);
-
-                Finalpath = CreateDataBase.imgSource + info.Name;
-
-            }
-            InsertGameInfo(text_title.Text, text_genre.Text, Finalpath, text_gameFile.Text, text_description.Text);
-            MessageBox.Show("Novo Jogo Salvo");
-            Directory.CreateDirectory(CreateDataBase.imgSource);
-
-
-            Clear();
-
-
-        }
-
         private void btnSearchImg_Click(object sender, EventArgs e)
         {
+
+            
 
             OpenFileDialog imgfile = new OpenFileDialog();
             imgfile.Filter = "*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
             if (imgfile.ShowDialog() == DialogResult.OK)
             {
-
-
-
-                text_imgFile.Text = imgfile.FileName;
-                previewBoxImg.BackgroundImage = Image.FromFile(text_imgFile.Text);
+                FileInfo info = new FileInfo(imgfile.FileName);
+                text_imgFile.Text = info.Name;
+                imgPath = imgfile.FileName;
+                previewBoxImg.BackgroundImage = Image.FromFile(imgfile.FileName);
 
             }
             else
@@ -160,10 +139,81 @@ namespace Game_library
 
         private void btnSearchGamePath_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog imgfile1 = new OpenFileDialog();
-            imgfile1.Filter = "All files (*.*)|*.*";
-            imgfile1.ShowDialog();
-            text_gameFile.Text = imgfile1.FileName;
+            imgfile1.Filter = "Executável(*.exe)|*.exe|All files (*.*)|*.*";
+
+            if (imgfile1.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo info = new FileInfo(imgfile1.FileName);
+                gamePath = imgfile1.FileName;
+                text_gameFile.Text = info.Name;
+            }
+            else
+            {
+                text_gameFile.Text = "Game Path";
+            }
+        }
+
+        private void btnSaveGame_Click(object sender, EventArgs e)
+        {
+            
+
+
+            if (File.Exists(imgPath))
+            {
+                FileInfo info = new FileInfo(imgPath);
+
+                File.Copy(imgPath, CreateDataBase.imgSource + info.Name);
+
+                Finalpath = CreateDataBase.imgSource + info.Name;
+
+                
+            }
+
+            if (text_genre.Text == "Genre")
+            {
+                MessageBox.Show("Insert a genre");
+            }
+
+            else if (text_title.Text == "Title")
+            {
+                MessageBox.Show("Insert a Title");
+            }
+
+            else if (text_imgFile.Text == "Image File")
+            {
+                MessageBox.Show("Insert an Image");
+            }
+
+            else if (text_gameFile.Text == "Game Path")
+            {
+                gamePath = "";
+            }
+            
+            
+            InsertGameInfo(text_title.Text, text_genre.Text, Finalpath, gamePath, text_description.Text);
+            MessageBox.Show("Novo Jogo Salvo");
+            Directory.CreateDirectory(CreateDataBase.imgSource);
+
+
+            Clear();
+            
+
+            
+        }
+
+        private void previewBoxImg_BackgroundImageLayoutChanged(object sender, EventArgs e)
+        {
+            if (previewBoxImg.BackgroundImage != Properties.Resources.Logo)
+            {
+                previewBoxImg.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            else
+            {
+                previewBoxImg.BackgroundImageLayout = ImageLayout.Zoom;
+            }
+
         }
 
         #endregion
@@ -261,5 +311,7 @@ namespace Game_library
             command.Dispose();
             connection.Close();
         }
+
+        
     }
 }
