@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlServerCe;
-using System.Collections;
 using System.IO;
 
 namespace Game_library
@@ -20,12 +14,11 @@ namespace Game_library
         public string gamePath;
         public string Finalpath;
         public string pathTodelete;
-        public object ListItems { get; private set; }
-
+        GameBanner banner = new GameBanner();
+        
         public editGame()
         {
-            InitializeComponent();
-            
+            InitializeComponent();   
         }
 
 
@@ -119,6 +112,9 @@ namespace Game_library
 
         #endregion
 
+
+        #region Eventos
+
         private void editGame_Load(object sender, EventArgs e)
         {
             LoadCombo();
@@ -126,13 +122,113 @@ namespace Game_library
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetGameToEdit(comboBox1.Text);
+            if (comboBox1.Text == "")
+            {
+                GetGameToEdit(banner.title);
+            }
+            else
+            {
+                GetGameToEdit(comboBox1.Text);
+            }
+
         }
 
+        private void btnSearchImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog imgfile = new OpenFileDialog();
+            imgfile.Filter = "*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            if (imgfile.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo info = new FileInfo(imgfile.FileName);
+                text_imgFile_edit.Text = info.Name;
+                imgPath = imgfile.FileName;
+                previewBoxImg.BackgroundImage = Image.FromFile(imgfile.FileName);
+
+            }
+            else
+            {
+                text_imgFile_edit.Text = "Image File";
+                previewBoxImg.BackgroundImage = Properties.Resources.Logo_ico;
+            }
+        }
+
+        private void btnSearchGamePath_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog imgfile1 = new OpenFileDialog();
+            imgfile1.Filter = "Executável(*.exe)|*.exe|All files (*.*)|*.*";
+
+            if (imgfile1.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo info = new FileInfo(imgfile1.FileName);
+                gamePath = imgfile1.FileName;
+
+                text_gameFile_edit.Text = info.Name;
+            }
+            else
+            {
+                gamePath = "";
+                text_gameFile_edit.Text = this.gamePath;
+            }
+        }
+
+        private void btnSaveEditGame_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Are you Sure ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (File.Exists(imgPath))
+                {
+                    FileInfo info = new FileInfo(imgPath);
+
+                    Finalpath = CreateDataBase.imgSource + info.Name;
+                    if (!File.Exists(Finalpath))
+                    {
+                        File.Copy(imgPath, Finalpath);
+                    }
+                    else
+                    {
+                        File.Delete(Finalpath);
+                        File.Copy(imgPath, Finalpath);
+                    }
+                }
 
 
-       
+                pathTodelete = Finalpath;
+                UpdateGame(text_title_edit.Text, text_genre_edit.Text, Finalpath, gamePath, text_description_edit.Text, int.Parse(comboBox1.ValueMember));
+                MessageBox.Show("Game has been Updated");
+                LoadCombo();
+                Directory.CreateDirectory(CreateDataBase.imgSource);
+            }
+            else
+            {
+                return;
+            }
+        }
 
+        private void xuiButton1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you Sure ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+
+                Deletegame(int.Parse(comboBox1.ValueMember));
+
+
+                MessageBox.Show("Game has been deleted");
+                LoadCombo();
+            }
+
+        }
+
+        private void xuiButton2_Click(object sender, EventArgs e)
+        {
+            LoadCombo();
+        }
+
+        #endregion
+
+
+        #region Metodos
         public void GetGameToEdit(string GameToEdit)
         {
             SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
@@ -182,103 +278,15 @@ namespace Game_library
 
             connection.Close();
 
+            
             comboBox1.ValueMember = "COD_GAME";
             comboBox1.DisplayMember = "GAME_TITLE";
             comboBox1.DataSource = table;
+            
+            
         }
 
-      
-        private void btnSearchImg_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog imgfile = new OpenFileDialog();
-            imgfile.Filter = "*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
-            if (imgfile.ShowDialog() == DialogResult.OK)
-            {
-                FileInfo info = new FileInfo(imgfile.FileName);
-                text_imgFile_edit.Text = info.Name;
-                imgPath = imgfile.FileName;
-                previewBoxImg.BackgroundImage = Image.FromFile(imgfile.FileName);
-
-            }
-            else
-            {
-                text_imgFile_edit.Text = "Image File";
-                previewBoxImg.BackgroundImage = Properties.Resources.Logo_ico;
-            }
-        }
-
-        private void btnSearchGamePath_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog imgfile1 = new OpenFileDialog();
-            imgfile1.Filter = "Executável(*.exe)|*.exe|All files (*.*)|*.*";
-
-            if (imgfile1.ShowDialog() == DialogResult.OK)
-            {
-                FileInfo info = new FileInfo(imgfile1.FileName);
-                gamePath = imgfile1.FileName;
-                
-                text_gameFile_edit.Text = info.Name;
-            }
-            else
-            {
-                gamePath = "";
-                text_gameFile_edit.Text = this.gamePath;
-            }
-        }
-
-       
-
-        private void btnSaveEditGame_Click(object sender, EventArgs e)
-        {
-
-            if (MessageBox.Show("Are you Sure ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (File.Exists(imgPath))
-                {
-                    FileInfo info = new FileInfo(imgPath);
-
-                    Finalpath = CreateDataBase.imgSource + info.Name;
-                    if (!File.Exists(Finalpath))
-                    {
-                        File.Copy(imgPath, Finalpath);
-                    }
-                    else
-                    {
-                        File.Delete(Finalpath);
-                        File.Copy(imgPath, Finalpath);
-                    }
-                }
-
-
-                pathTodelete = Finalpath;
-                UpdateGame(text_title_edit.Text, text_genre_edit.Text, Finalpath, gamePath, text_description_edit.Text, comboBox1.Text);
-                MessageBox.Show("Game has been Updated");
-                LoadCombo();
-                Directory.CreateDirectory(CreateDataBase.imgSource);
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        private void xuiButton1_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you Sure ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-
-
-                Deletegame(comboBox1.Text);
-
-             
-               
-                MessageBox.Show("Game has been deleted");
-                LoadCombo();
-            }
-                
-        }
-
-        public void UpdateGame(string gameTitle, string gameGenre, string imgFile, string gamePath, string desc, string id)
+        public void UpdateGame(string gameTitle, string gameGenre, string imgFile, string gamePath, string desc, int game_id)
         {
             SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
             connection.Open();
@@ -291,7 +299,7 @@ namespace Game_library
             update.Parameters.AddWithValue("@NewImgFile", imgFile);
             update.Parameters.AddWithValue("@NewGamePath", gamePath);
             update.Parameters.AddWithValue("@NewDescription", desc);
-            update.Parameters.AddWithValue("@Id", id);
+            update.Parameters.AddWithValue("@Id", game_id);
 
 
             update.ExecuteNonQuery();
@@ -299,20 +307,22 @@ namespace Game_library
             connection.Close();
         }
 
-        public void Deletegame(string game)
+        public void Deletegame(int game_id)
         {
             SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
             connection.Open();
 
 
-            string query = "DELETE FROM Games WHERE GAME_TITLE = @game";
+            string query = "DELETE FROM Games WHERE COD_GAME = @id ";
 
             SqlCeCommand Delete = new SqlCeCommand(query, connection);
-            Delete.Parameters.AddWithValue("@game", game);
+            Delete.Parameters.AddWithValue("@game", game_id);
 
             Delete.ExecuteNonQuery();
             Delete.Dispose();
             connection.Close();
         }
+        #endregion
+
     }
 }
