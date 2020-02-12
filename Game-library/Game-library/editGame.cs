@@ -10,11 +10,11 @@ namespace Game_library
     public partial class editGame : UserControl
     {
 
-        public string imgPath;
-        public string gamePath;
-        public string Finalpath;
-        public string pathTodelete;
-        GameBanner banner = new GameBanner();
+        private string imgPath;
+        private string gamePath;
+        private string Finalpath;
+        private string pathTodelete;
+        
         
         public editGame()
         {
@@ -122,15 +122,9 @@ namespace Game_library
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "")
-            {
-                GetGameToEdit(banner.title);
-            }
-            else
-            {
+         
                 GetGameToEdit(comboBox1.Text);
-            }
-
+            
         }
 
         private void btnSearchImg_Click(object sender, EventArgs e)
@@ -211,7 +205,7 @@ namespace Game_library
             {
 
 
-                Deletegame(int.Parse(comboBox1.ValueMember));
+                Deletegame(comboBox1.Text);
 
 
                 MessageBox.Show("Game has been deleted");
@@ -292,7 +286,7 @@ namespace Game_library
             connection.Open();
 
 
-            string query = "UPDATE Games SET GAME_TITLE = @NewGameTitle, GAME_GENRE = @NewGameGenre, GAME_IMG_FILE = @NewImgFile, GAME_PATH = @NewGamePath, GAME_DESCRIPTION = @NewDescription WHERE GAME_TITLE = @Id";
+            string query = "UPDATE Games SET GAME_TITLE = @NewGameTitle, GAME_GENRE = @NewGameGenre, GAME_IMG_FILE = @NewImgFile, GAME_PATH = @NewGamePath, GAME_DESCRIPTION = @NewDescription WHERE COD_GAME = @Id";
             SqlCeCommand update = new SqlCeCommand(query, connection);
             update.Parameters.AddWithValue("@NewGameTitle", gameTitle);
             update.Parameters.AddWithValue("@NewGameGenre", gameGenre);
@@ -307,16 +301,16 @@ namespace Game_library
             connection.Close();
         }
 
-        public void Deletegame(int game_id)
+        public void Deletegame(string game_id) 
         {
             SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
             connection.Open();
 
 
-            string query = "DELETE FROM Games WHERE COD_GAME = @id ";
+            string query = "DELETE FROM Games WHERE GAME_TITLE = @id ";
 
             SqlCeCommand Delete = new SqlCeCommand(query, connection);
-            Delete.Parameters.AddWithValue("@game", game_id);
+            Delete.Parameters.AddWithValue("@id", game_id);
 
             Delete.ExecuteNonQuery();
             Delete.Dispose();
