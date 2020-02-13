@@ -169,6 +169,12 @@
   <ItemGroup>
     <Content Include="dlls\XanderUI.dll" />
     <Content Include="Logo.ico.ico" />
+    <None Include="Resources\edit_100px.png" />
+    <None Include="Resources\plus_48px.png" />
+    <None Include="Resources\plus_40px.png" />
+    <None Include="Resources\game_controller_40px.png" />
+    <None Include="Resources\visual_game_boy_64px.png" />
+    <None Include="Resources\library.png" />
     <None Include="Resources\resident-evil-3.png" />
     <None Include="Resources\Logo.ico.png" />
     <None Include="Resources\minimizeWindow_24px.png" />
