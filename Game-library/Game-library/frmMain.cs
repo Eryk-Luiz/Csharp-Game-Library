@@ -8,6 +8,7 @@ namespace Game_library
 
 
         #region Instancias de outros Formulários e userControls.
+        CreatingGameTable creatingGameTable = new CreatingGameTable();
         New_Game New = new New_Game();
         library library = new library();
         GameBanner game = new GameBanner();
@@ -27,7 +28,8 @@ namespace Game_library
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            New.CreatingGameTable();
+            creatingGameTable.CreatingTable();
+           
             library.getGameInfo();
             ChangePanelContent(library);
         }

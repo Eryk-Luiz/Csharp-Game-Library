@@ -10,17 +10,81 @@ namespace Game_library
     public partial class editGame : UserControl
     {
 
+        #region Propriedades públicas
         private string imgPath;
-        private string gamePath;
-        private string Finalpath;
-        private string pathTodelete;
+        private string pathimg;
+        private string pathgame;
         
-        
+        #endregion
+
+        #region Instancias
+        Update update = new Update();
+        #endregion
+
         public editGame()
         {
             InitializeComponent();   
         }
 
+        public void GetGameToEdit(string GameToEdit)
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
+            connection.Open();
+
+            DataTable table = new DataTable();
+            string query = "SELECT * FROM Games WHERE GAME_TITLE = '" + GameToEdit + "'" + "AND COD_USER_INC = '" + frmLogin.cod_user + "'";
+
+            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
+            adapter.Fill(table);
+
+
+            connection.Close();
+
+
+            foreach (DataRow item in table.Rows)
+            {
+                pathimg = item["GAME_IMG_FILE"].ToString();
+                pathgame = item["GAME_PATH"].ToString();
+                FileInfo info = new FileInfo(pathimg);
+                FileInfo info1 = new FileInfo(pathgame);
+
+
+                text_title_edit.Text = item["GAME_TITLE"].ToString();
+                text_genre_edit.Text = item["GAME_GENRE"].ToString();
+                text_imgFile_edit.Text = info.Name;
+                text_gameFile_edit.Text = info1.Name;
+                text_description_edit.Text = item["GAME_DESCRIPTION"].ToString();
+                previewBoxImg.BackgroundImage = Image.FromFile(pathimg);
+            }
+
+
+
+        }
+
+        public void LoadCombo()
+        {
+            SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
+            connection.Open();
+
+            DataTable table = new DataTable();
+            string query = "SELECT COD_GAME, GAME_TITLE FROM Games WHERE COD_USER_INC = '" + frmLogin.cod_user + "'";
+
+            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
+            adapter.Fill(table);
+
+
+            connection.Close();
+
+
+            comboBox1.ValueMember = "COD_GAME";
+            comboBox1.DisplayMember = "GAME_TITLE";
+            comboBox1.DataSource = table;
+        }
+
+        private void Validar()
+        {
+            
+        }
 
         #region Text Box Events
 
@@ -122,9 +186,7 @@ namespace Game_library
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
                 GetGameToEdit(comboBox1.Text);
-            
         }
 
         private void btnSearchImg_Click(object sender, EventArgs e)
@@ -154,49 +216,55 @@ namespace Game_library
             if (imgfile1.ShowDialog() == DialogResult.OK)
             {
                 FileInfo info = new FileInfo(imgfile1.FileName);
-                gamePath = imgfile1.FileName;
+                pathgame = imgfile1.FileName;
 
                 text_gameFile_edit.Text = info.Name;
             }
             else
             {
-                gamePath = "";
-                text_gameFile_edit.Text = this.gamePath;
+                pathgame = "";
+                text_gameFile_edit.Text = pathgame;
             }
         }
 
         private void btnSaveEditGame_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("Are you Sure ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (text_imgFile_edit.Text == "" || text_imgFile_edit.Text == "Image File")
+            {
+                MessageBox.Show("Insert an Image");
+                
+            }
+            else if (text_gameFile_edit.Text == "" || text_gameFile_edit.Text == "Game Path")
+            {
+                MessageBox.Show("Insert a Game File");
+                
+            }
+            else if (MessageBox.Show("Are you Sure ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (File.Exists(imgPath))
                 {
                     FileInfo info = new FileInfo(imgPath);
 
-                    Finalpath = CreateDataBase.imgSource + info.Name;
-                    if (!File.Exists(Finalpath))
+                    pathimg = CreateDataBase.imgSource + info.Name;
+                    if (!File.Exists(pathimg))
                     {
-                        File.Copy(imgPath, Finalpath);
+                        File.Copy(imgPath, pathimg);
                     }
                     else
                     {
-                        File.Delete(Finalpath);
-                        File.Copy(imgPath, Finalpath);
+                        File.Delete(pathimg);
+                        File.Copy(imgPath, pathimg);
                     }
                 }
-
-
-                pathTodelete = Finalpath;
-                UpdateGame(text_title_edit.Text, text_genre_edit.Text, Finalpath, gamePath, text_description_edit.Text, int.Parse(comboBox1.ValueMember));
-                MessageBox.Show("Game has been Updated");
+                update.UpdateGame(text_title_edit.Text, text_genre_edit.Text, pathimg, pathgame, text_description_edit.Text, comboBox1.Text);
                 LoadCombo();
+                MessageBox.Show("Game has been Updated");
+                
+
                 Directory.CreateDirectory(CreateDataBase.imgSource);
+                
             }
-            else
-            {
-                return;
-            }
+           
         }
 
         private void xuiButton1_Click(object sender, EventArgs e)
@@ -205,7 +273,7 @@ namespace Game_library
             {
 
 
-                Deletegame(comboBox1.Text);
+                update.Deletegame(comboBox1.Text);
 
 
                 MessageBox.Show("Game has been deleted");
@@ -220,103 +288,5 @@ namespace Game_library
         }
 
         #endregion
-
-
-        #region Metodos
-        public void GetGameToEdit(string GameToEdit)
-        {
-            SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
-            connection.Open();
-
-            DataTable table = new DataTable();
-            string query = "SELECT * FROM Games WHERE GAME_TITLE = '" + GameToEdit + "'";
-
-            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
-            adapter.Fill(table);
-
-
-            connection.Close();
-
-
-            foreach (DataRow item in table.Rows)
-            {
-                string pathimg = item["GAME_IMG_FILE"].ToString();
-                string pathgame = item["GAME_PATH"].ToString();
-                FileInfo info = new FileInfo(pathimg);
-                FileInfo info1 = new FileInfo(pathgame);
-
-
-                text_title_edit.Text = item["GAME_TITLE"].ToString();
-                text_genre_edit.Text = item["GAME_GENRE"].ToString();
-                text_imgFile_edit.Text = info.Name;
-                text_gameFile_edit.Text = info1.Name;
-                text_description_edit.Text = item["GAME_DESCRIPTION"].ToString();
-                previewBoxImg.BackgroundImage = Image.FromFile(pathimg);
-            }
-
-
-
-        }
-
-        public void LoadCombo()
-        {
-            SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
-            connection.Open();
-
-            DataTable table = new DataTable();
-            string query = "SELECT COD_GAME, GAME_TITLE FROM Games";
-
-            SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
-            adapter.Fill(table);
-
-
-            connection.Close();
-
-            
-            comboBox1.ValueMember = "COD_GAME";
-            comboBox1.DisplayMember = "GAME_TITLE";
-            comboBox1.DataSource = table;
-            
-            
-        }
-
-        public void UpdateGame(string gameTitle, string gameGenre, string imgFile, string gamePath, string desc, int game_id)
-        {
-            SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
-            connection.Open();
-
-
-            string query = "UPDATE Games SET GAME_TITLE = @NewGameTitle, GAME_GENRE = @NewGameGenre, GAME_IMG_FILE = @NewImgFile, GAME_PATH = @NewGamePath, GAME_DESCRIPTION = @NewDescription WHERE COD_GAME = @Id";
-            SqlCeCommand update = new SqlCeCommand(query, connection);
-            update.Parameters.AddWithValue("@NewGameTitle", gameTitle);
-            update.Parameters.AddWithValue("@NewGameGenre", gameGenre);
-            update.Parameters.AddWithValue("@NewImgFile", imgFile);
-            update.Parameters.AddWithValue("@NewGamePath", gamePath);
-            update.Parameters.AddWithValue("@NewDescription", desc);
-            update.Parameters.AddWithValue("@Id", game_id);
-
-
-            update.ExecuteNonQuery();
-            update.Dispose();
-            connection.Close();
-        }
-
-        public void Deletegame(string game_id) 
-        {
-            SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
-            connection.Open();
-
-
-            string query = "DELETE FROM Games WHERE GAME_TITLE = @id ";
-
-            SqlCeCommand Delete = new SqlCeCommand(query, connection);
-            Delete.Parameters.AddWithValue("@id", game_id);
-
-            Delete.ExecuteNonQuery();
-            Delete.Dispose();
-            connection.Close();
-        }
-        #endregion
-
     }
 }

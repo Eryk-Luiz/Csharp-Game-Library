@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateDataBase.cs" />
+    <Compile Include="CreatingGameTable.cs" />
     <Compile Include="editGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +121,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Update.cs" />
     <EmbeddedResource Include="editGame.resx">
       <DependentUpon>editGame.cs</DependentUpon>
     </EmbeddedResource>

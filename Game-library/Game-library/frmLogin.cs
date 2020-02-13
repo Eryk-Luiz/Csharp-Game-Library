@@ -9,6 +9,7 @@ namespace Game_library
     public partial class frmLogin : Form
     {
         public static string User;
+        public static int cod_user;
 
         public frmLogin()
         {
@@ -118,7 +119,7 @@ namespace Game_library
                 //command
                 DataTable table1 = new DataTable();
 
-                string query = "SELECT USER_NAME, PASSWORD FROM Users WHERE USER_NAME =" + "'" + textLogin.Text + "'" + "AND PASSWORD = '" + textPasswd.Text + "'";
+                string query = "SELECT USER_NAME, PASSWORD, COD_USER FROM Users WHERE USER_NAME =" + "'" + textLogin.Text + "'" + "AND PASSWORD = '" + textPasswd.Text + "'";
 
                 SqlCeDataAdapter command = new SqlCeDataAdapter(query, connection);
                 command.Fill(table1);
@@ -151,6 +152,7 @@ namespace Game_library
                     else
                     {
                         User = textLogin.Text;
+                        cod_user = int.Parse(table1.Rows[0]["COD_USER"].ToString());
 
 
                         //Esconde o frmLogin

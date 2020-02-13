@@ -9,15 +9,23 @@ namespace Game_library
 {
     public partial class New_Game : UserControl
     {
-        public string gamePath;
-        public string Finalpath;
-        public string imgPath;
+        #region Propriedades privadas
+        private string gamePath;
+        private string Finalpath;
+        private string imgPath;
+        #endregion
+
+
+        #region Instancias
+        CreatingGameTable creatingGameTable = new CreatingGameTable();
+        #endregion
 
         public New_Game()
         {
             InitializeComponent();
 
         }
+
 
         #region Text Box Events
 
@@ -157,47 +165,58 @@ namespace Game_library
 
         private void btnSaveGame_Click(object sender, EventArgs e)
         {
-            
-
 
             if (File.Exists(imgPath))
             {
                 FileInfo info = new FileInfo(imgPath);
-
-                File.Copy(imgPath, CreateDataBase.imgSource + info.Name);
-
                 Finalpath = CreateDataBase.imgSource + info.Name;
 
-                
+                if (!File.Exists(Finalpath))
+                {
+                    File.Copy(imgPath, CreateDataBase.imgSource + info.Name);
+                }
+                else
+                {
+                    File.Delete(Finalpath);
+                    File.Copy(imgPath, CreateDataBase.imgSource + info.Name);
+                }
             }
 
-            if (text_genre.Text == "Genre")
-            {
-                MessageBox.Show("Insert a genre");
-            }
 
-            else if (text_title.Text == "Title")
+
+            if (text_title.Text == "Title")
             {
                 MessageBox.Show("Insert a Title");
+            }
+
+            else if (text_genre.Text == "Genre")
+            {
+                MessageBox.Show("Insert a Genre");
             }
 
             else if (text_imgFile.Text == "Image File")
             {
                 MessageBox.Show("Insert an Image");
             }
-
             else if (text_gameFile.Text == "Game Path")
             {
-                gamePath = "";
+                MessageBox.Show("Insert a Game file");
             }
-            
-            
-            InsertGameInfo(text_title.Text, text_genre.Text, Finalpath, gamePath, text_description.Text);
-            MessageBox.Show("Novo Jogo Salvo");
-            Directory.CreateDirectory(CreateDataBase.imgSource);
+            else
+            {
+                creatingGameTable.InsertGameInfo(text_title.Text, text_genre.Text, Finalpath, gamePath, text_description.Text);
+                MessageBox.Show("Novo Jogo Salvo");
+                Directory.CreateDirectory(CreateDataBase.imgSource);
 
 
-            Clear();
+                Clear();
+            }
+
+           
+            
+
+
+           
             
 
             
@@ -230,88 +249,5 @@ namespace Game_library
 
             previewBoxImg.BackgroundImage = Properties.Resources.Logo_ico;
         }
-
-        //Método que Cria a Tabela de Games no Banco Local
-        public void CreatingGameTable()
-        {
-
-            try
-            {
-                //faz conexão com o Banco;
-                SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
-                connection.Open();
-
-                DataTable table = new DataTable();
-
-
-                //Verifica se a Tabela Existe
-                string query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Games'";
-                SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
-                adapter.Fill(table);
-
-
-
-
-                if (table.Rows.Count == 0)
-                {
-                    //Create Table
-                    string query2 =
-                                   "CREATE TABLE Games(" +
-                                   "COD_GAME            INT PRIMARY KEY IDENTITY(1,1)," +
-                                   "GAME_TITLE          NVARCHAR(50) NOT NULL," +
-                                   "GAME_GENRE          NVARCHAR(50) NOT NULL," +
-                                   "GAME_IMG_FILE       NVARCHAR(160) NOT NULL," +
-                                   "GAME_PATH           NVARCHAR(160)," +
-                                   "GAME_DESCRIPTION    NVARCHAR(160)," +
-                                   "DAT_GAME_INC        DATETIME" +
-                                   ")";
-
-
-                    SqlCeCommand command = new SqlCeCommand(query2, connection);
-                    command.ExecuteNonQuery();
-
-
-                    command.Dispose();
-                    connection.Close();
-                }
-                else
-                {
-                    return;
-                }
-
-            }
-            catch
-            {
-                MessageBox.Show("Erro ao Criar Tabela de Games");
-            }
-
-        }
-
-        //método que insere os registros na tabela
-        public static void InsertGameInfo(string title, string genre, string imgFile, string gamePath, string gameDesc)
-        {
-            SqlCeConnection connection = new SqlCeConnection("Data Source =" + CreateDataBase.conString);
-            connection.Open();
-
-
-            string query = "INSERT INTO Games(GAME_TITLE, GAME_GENRE, GAME_IMG_FILE, GAME_PATH, GAME_DESCRIPTION, DAT_GAME_INC)" +
-                           "VALUES(@title, @genre, @imgFile, @gamePath, @gameDescription, @dateInc)";
-
-            SqlCeCommand command = new SqlCeCommand(query, connection);
-            command.Parameters.AddWithValue("@title", title);
-            command.Parameters.AddWithValue("@genre", genre);
-            command.Parameters.AddWithValue("@imgFile", imgFile);
-            command.Parameters.AddWithValue("@gamePath", gamePath);
-            command.Parameters.AddWithValue("@gameDescription", gameDesc);
-            command.Parameters.AddWithValue("@dateInc", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-
-
-            command.ExecuteNonQuery();
-
-            command.Dispose();
-            connection.Close();
-        }
-
-        
     }
 }

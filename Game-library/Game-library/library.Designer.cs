@@ -30,12 +30,12 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.libraryPanel = new System.Windows.Forms.Panel();
-            this.btnFilter = new XanderUI.XUIButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.text_filter_title = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.texte_genteFilter = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.text_filter_title = new System.Windows.Forms.TextBox();
+            this.btnFilter = new XanderUI.XUIButton();
             this.libraryPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 65);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(974, 488);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1022, 532);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // libraryPanel
@@ -61,56 +61,16 @@
             this.libraryPanel.Location = new System.Drawing.Point(0, 0);
             this.libraryPanel.Margin = new System.Windows.Forms.Padding(2);
             this.libraryPanel.Name = "libraryPanel";
-            this.libraryPanel.Size = new System.Drawing.Size(974, 553);
+            this.libraryPanel.Size = new System.Drawing.Size(1025, 600);
             this.libraryPanel.TabIndex = 4;
             // 
-            // btnFilter
+            // panel4
             // 
-            this.btnFilter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.btnFilter.ButtonImage = null;
-            this.btnFilter.ButtonStyle = XanderUI.XUIButton.Style.Material;
-            this.btnFilter.ButtonText = "Filter";
-            this.btnFilter.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
-            this.btnFilter.ClickTextColor = System.Drawing.Color.White;
-            this.btnFilter.CornerRadius = 5;
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnFilter.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btnFilter.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
-            this.btnFilter.HoverTextColor = System.Drawing.Color.White;
-            this.btnFilter.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnFilter.Location = new System.Drawing.Point(757, 7);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(102, 34);
-            this.btnFilter.TabIndex = 5;
-            this.btnFilter.TextColor = System.Drawing.Color.White;
-            this.btnFilter.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel1.Location = new System.Drawing.Point(198, 37);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 2);
-            this.panel1.TabIndex = 7;
-            // 
-            // text_filter_title
-            // 
-            this.text_filter_title.BackColor = System.Drawing.Color.White;
-            this.text_filter_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.text_filter_title.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_filter_title.ForeColor = System.Drawing.Color.Black;
-            this.text_filter_title.HideSelection = false;
-            this.text_filter_title.Location = new System.Drawing.Point(198, 12);
-            this.text_filter_title.Name = "text_filter_title";
-            this.text_filter_title.Size = new System.Drawing.Size(211, 19);
-            this.text_filter_title.TabIndex = 6;
-            this.text_filter_title.TabStop = false;
-            this.text_filter_title.Text = "Game";
-            this.text_filter_title.Click += new System.EventHandler(this.text_filter_title_Click);
-            this.text_filter_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_filter_title_KeyDown);
-            this.text_filter_title.Leave += new System.EventHandler(this.text_filter_title_Leave);
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
+            this.panel4.Location = new System.Drawing.Point(2, 58);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(969, 2);
+            this.panel4.TabIndex = 10;
             // 
             // panel2
             // 
@@ -137,13 +97,52 @@
             this.texte_genteFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.texte_genteFilter_KeyDown);
             this.texte_genteFilter.Leave += new System.EventHandler(this.texte_genteFilter_Leave);
             // 
-            // panel4
+            // panel1
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel4.Location = new System.Drawing.Point(2, 58);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(969, 2);
-            this.panel4.TabIndex = 10;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
+            this.panel1.Location = new System.Drawing.Point(198, 37);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(219, 2);
+            this.panel1.TabIndex = 7;
+            // 
+            // text_filter_title
+            // 
+            this.text_filter_title.BackColor = System.Drawing.Color.White;
+            this.text_filter_title.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.text_filter_title.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_filter_title.ForeColor = System.Drawing.Color.Black;
+            this.text_filter_title.HideSelection = false;
+            this.text_filter_title.Location = new System.Drawing.Point(198, 12);
+            this.text_filter_title.Name = "text_filter_title";
+            this.text_filter_title.Size = new System.Drawing.Size(211, 19);
+            this.text_filter_title.TabIndex = 6;
+            this.text_filter_title.TabStop = false;
+            this.text_filter_title.Text = "Game";
+            this.text_filter_title.Click += new System.EventHandler(this.text_filter_title_Click);
+            this.text_filter_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.text_filter_title_KeyDown);
+            this.text_filter_title.Leave += new System.EventHandler(this.text_filter_title_Leave);
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
+            this.btnFilter.ButtonImage = null;
+            this.btnFilter.ButtonStyle = XanderUI.XUIButton.Style.Material;
+            this.btnFilter.ButtonText = "Filter";
+            this.btnFilter.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
+            this.btnFilter.ClickTextColor = System.Drawing.Color.White;
+            this.btnFilter.CornerRadius = 5;
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btnFilter.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnFilter.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
+            this.btnFilter.HoverTextColor = System.Drawing.Color.White;
+            this.btnFilter.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btnFilter.Location = new System.Drawing.Point(757, 7);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(102, 34);
+            this.btnFilter.TabIndex = 5;
+            this.btnFilter.TextColor = System.Drawing.Color.White;
+            this.btnFilter.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // library
             // 
@@ -151,7 +150,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.libraryPanel);
             this.Name = "library";
-            this.Size = new System.Drawing.Size(974, 553);
+            this.Size = new System.Drawing.Size(1025, 600);
             this.libraryPanel.ResumeLayout(false);
             this.libraryPanel.PerformLayout();
             this.ResumeLayout(false);

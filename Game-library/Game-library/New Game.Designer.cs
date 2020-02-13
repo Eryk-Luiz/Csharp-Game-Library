@@ -53,7 +53,7 @@
             this.previewBoxImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.previewBoxImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.previewBoxImg.InitialImage = global::Game_library.Properties.Resources.Logo;
-            this.previewBoxImg.Location = new System.Drawing.Point(677, 61);
+            this.previewBoxImg.Location = new System.Drawing.Point(739, 37);
             this.previewBoxImg.Name = "previewBoxImg";
             this.previewBoxImg.Size = new System.Drawing.Size(270, 329);
             this.previewBoxImg.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.btnSaveGame.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSaveGame.HoverTextColor = System.Drawing.Color.White;
             this.btnSaveGame.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSaveGame.Location = new System.Drawing.Point(792, 490);
+            this.btnSaveGame.Location = new System.Drawing.Point(827, 519);
             this.btnSaveGame.Name = "btnSaveGame";
             this.btnSaveGame.Size = new System.Drawing.Size(170, 51);
             this.btnSaveGame.TabIndex = 5;
@@ -86,7 +86,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(715, 35);
+            this.label1.Location = new System.Drawing.Point(777, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 23);
             this.label1.TabIndex = 7;
@@ -96,7 +96,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel1.Location = new System.Drawing.Point(21, 150);
+            this.panel1.Location = new System.Drawing.Point(21, 160);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(416, 2);
             this.panel1.TabIndex = 9;
@@ -108,7 +108,7 @@
             this.text_title.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_title.ForeColor = System.Drawing.Color.Black;
             this.text_title.HideSelection = false;
-            this.text_title.Location = new System.Drawing.Point(21, 115);
+            this.text_title.Location = new System.Drawing.Point(21, 125);
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(378, 29);
             this.text_title.TabIndex = 0;
@@ -146,7 +146,7 @@
             this.text_description.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_description.ForeColor = System.Drawing.Color.Black;
             this.text_description.HideSelection = false;
-            this.text_description.Location = new System.Drawing.Point(21, 443);
+            this.text_description.Location = new System.Drawing.Point(21, 471);
             this.text_description.Multiline = true;
             this.text_description.Name = "text_description";
             this.text_description.Size = new System.Drawing.Size(757, 99);
@@ -166,7 +166,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel4.Location = new System.Drawing.Point(23, 283);
+            this.panel4.Location = new System.Drawing.Point(23, 290);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(632, 2);
             this.panel4.TabIndex = 14;
@@ -179,7 +179,7 @@
             this.text_imgFile.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_imgFile.ForeColor = System.Drawing.Color.Black;
             this.text_imgFile.HideSelection = false;
-            this.text_imgFile.Location = new System.Drawing.Point(21, 248);
+            this.text_imgFile.Location = new System.Drawing.Point(21, 255);
             this.text_imgFile.Name = "text_imgFile";
             this.text_imgFile.Size = new System.Drawing.Size(632, 29);
             this.text_imgFile.TabIndex = 13;
@@ -203,7 +203,7 @@
             this.btnSearchImg.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSearchImg.HoverTextColor = System.Drawing.Color.White;
             this.btnSearchImg.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSearchImg.Location = new System.Drawing.Point(21, 291);
+            this.btnSearchImg.Location = new System.Drawing.Point(21, 298);
             this.btnSearchImg.Name = "btnSearchImg";
             this.btnSearchImg.Size = new System.Drawing.Size(112, 34);
             this.btnSearchImg.TabIndex = 2;
@@ -226,7 +226,7 @@
             this.btnSearchGamePath.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnSearchGamePath.HoverTextColor = System.Drawing.Color.White;
             this.btnSearchGamePath.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSearchGamePath.Location = new System.Drawing.Point(23, 396);
+            this.btnSearchGamePath.Location = new System.Drawing.Point(21, 398);
             this.btnSearchGamePath.Name = "btnSearchGamePath";
             this.btnSearchGamePath.Size = new System.Drawing.Size(112, 34);
             this.btnSearchGamePath.TabIndex = 3;
@@ -237,7 +237,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.panel5.Location = new System.Drawing.Point(23, 388);
+            this.panel5.Location = new System.Drawing.Point(21, 390);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(633, 2);
             this.panel5.TabIndex = 18;
@@ -250,7 +250,7 @@
             this.text_gameFile.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_gameFile.ForeColor = System.Drawing.Color.Black;
             this.text_gameFile.HideSelection = false;
-            this.text_gameFile.Location = new System.Drawing.Point(23, 353);
+            this.text_gameFile.Location = new System.Drawing.Point(21, 355);
             this.text_gameFile.Name = "text_gameFile";
             this.text_gameFile.Size = new System.Drawing.Size(630, 29);
             this.text_gameFile.TabIndex = 17;
@@ -264,7 +264,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.label2.Location = new System.Drawing.Point(371, 14);
+            this.label2.Location = new System.Drawing.Point(366, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(232, 56);
             this.label2.TabIndex = 20;
@@ -292,7 +292,7 @@
             this.Controls.Add(this.btnSaveGame);
             this.Controls.Add(this.previewBoxImg);
             this.Name = "New_Game";
-            this.Size = new System.Drawing.Size(974, 553);
+            this.Size = new System.Drawing.Size(1025, 600);
             ((System.ComponentModel.ISupportInitialize)(this.previewBoxImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

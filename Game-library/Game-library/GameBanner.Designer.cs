@@ -56,7 +56,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
             this.panel2.Location = new System.Drawing.Point(185, 84);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 2);
+            this.panel2.Size = new System.Drawing.Size(478, 2);
             this.panel2.TabIndex = 16;
             // 
             // panel1
@@ -64,7 +64,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
             this.panel1.Location = new System.Drawing.Point(185, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(416, 2);
+            this.panel1.Size = new System.Drawing.Size(476, 2);
             this.panel1.TabIndex = 14;
             // 
             // label_title
@@ -73,7 +73,7 @@
             this.label_title.ForeColor = System.Drawing.Color.White;
             this.label_title.Location = new System.Drawing.Point(185, 4);
             this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(418, 23);
+            this.label_title.Size = new System.Drawing.Size(478, 23);
             this.label_title.TabIndex = 17;
             this.label_title.Text = "Title";
             // 
@@ -83,7 +83,7 @@
             this.label_genre.ForeColor = System.Drawing.Color.White;
             this.label_genre.Location = new System.Drawing.Point(185, 58);
             this.label_genre.Name = "label_genre";
-            this.label_genre.Size = new System.Drawing.Size(416, 23);
+            this.label_genre.Size = new System.Drawing.Size(476, 23);
             this.label_genre.TabIndex = 18;
             this.label_genre.Text = "genre";
             // 
@@ -93,7 +93,7 @@
             this.label_disc.ForeColor = System.Drawing.Color.White;
             this.label_disc.Location = new System.Drawing.Point(187, 103);
             this.label_disc.Name = "label_disc";
-            this.label_disc.Size = new System.Drawing.Size(414, 78);
+            this.label_disc.Size = new System.Drawing.Size(474, 78);
             this.label_disc.TabIndex = 19;
             this.label_disc.Text = "Discription";
             // 
@@ -111,7 +111,7 @@
             this.btnStartGame.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(44)))));
             this.btnStartGame.HoverTextColor = System.Drawing.Color.White;
             this.btnStartGame.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnStartGame.Location = new System.Drawing.Point(639, 6);
+            this.btnStartGame.Location = new System.Drawing.Point(678, 6);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(179, 204);
             this.btnStartGame.TabIndex = 20;
@@ -144,7 +144,7 @@
             this.Controls.Add(this.gameBannerImg);
             this.Margin = new System.Windows.Forms.Padding(75, 25, 1, 1);
             this.Name = "GameBanner";
-            this.Size = new System.Drawing.Size(833, 217);
+            this.Size = new System.Drawing.Size(869, 217);
             ((System.ComponentModel.ISupportInitialize)(this.gameBannerImg)).EndInit();
             this.ResumeLayout(false);
 

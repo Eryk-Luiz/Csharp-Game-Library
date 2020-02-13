@@ -55,7 +55,7 @@
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1112, 54);
+            this.HeaderPanel.Size = new System.Drawing.Size(1162, 54);
             this.HeaderPanel.TabIndex = 1;
             this.HeaderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmMain_MouseDown);
             // 
@@ -70,7 +70,7 @@
             this.logo.Image = null;
             this.logo.IsElipse = false;
             this.logo.IsParallax = false;
-            this.logo.Location = new System.Drawing.Point(476, -15);
+            this.logo.Location = new System.Drawing.Point(526, -15);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(110, 83);
             this.logo.TabIndex = 5;
@@ -80,7 +80,7 @@
             // 
             this.WindowsMinimize.BackgroundImage = global::Game_library.Properties.Resources.minimizeWindow_24px;
             this.WindowsMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.WindowsMinimize.Location = new System.Drawing.Point(1028, 11);
+            this.WindowsMinimize.Location = new System.Drawing.Point(1080, 12);
             this.WindowsMinimize.Name = "WindowsMinimize";
             this.WindowsMinimize.Size = new System.Drawing.Size(33, 30);
             this.WindowsMinimize.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.WindowClose.BackgroundImage = global::Game_library.Properties.Resources.closeWindow_24px;
             this.WindowClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.WindowClose.Location = new System.Drawing.Point(1066, 11);
+            this.WindowClose.Location = new System.Drawing.Point(1118, 12);
             this.WindowClose.Name = "WindowClose";
             this.WindowClose.Size = new System.Drawing.Size(33, 30);
             this.WindowClose.TabIndex = 3;
@@ -100,7 +100,7 @@
             // 
             this.labelLoggedUser.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLoggedUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
-            this.labelLoggedUser.Location = new System.Drawing.Point(10, 504);
+            this.labelLoggedUser.Location = new System.Drawing.Point(12, 556);
             this.labelLoggedUser.Name = "labelLoggedUser";
             this.labelLoggedUser.Size = new System.Drawing.Size(117, 35);
             this.labelLoggedUser.TabIndex = 6;
@@ -117,9 +117,9 @@
             this.PanelAsideLeft.Controls.Add(this.panel1);
             this.PanelAsideLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelAsideLeft.Location = new System.Drawing.Point(0, 54);
-            this.PanelAsideLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PanelAsideLeft.Margin = new System.Windows.Forms.Padding(2);
             this.PanelAsideLeft.Name = "PanelAsideLeft";
-            this.PanelAsideLeft.Size = new System.Drawing.Size(137, 553);
+            this.PanelAsideLeft.Size = new System.Drawing.Size(137, 600);
             this.PanelAsideLeft.TabIndex = 2;
             // 
             // btnEditGame
@@ -137,7 +137,7 @@
             this.btnEditGame.HoverTextColor = System.Drawing.Color.White;
             this.btnEditGame.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnEditGame.Location = new System.Drawing.Point(-1, 272);
-            this.btnEditGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditGame.Name = "btnEditGame";
             this.btnEditGame.Size = new System.Drawing.Size(139, 59);
             this.btnEditGame.TabIndex = 7;
@@ -160,7 +160,7 @@
             this.btnLibrary.HoverTextColor = System.Drawing.Color.White;
             this.btnLibrary.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnLibrary.Location = new System.Drawing.Point(-1, 146);
-            this.btnLibrary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLibrary.Margin = new System.Windows.Forms.Padding(2);
             this.btnLibrary.Name = "btnLibrary";
             this.btnLibrary.Size = new System.Drawing.Size(139, 59);
             this.btnLibrary.TabIndex = 3;
@@ -183,7 +183,7 @@
             this.btnNewGame.HoverTextColor = System.Drawing.Color.White;
             this.btnNewGame.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnNewGame.Location = new System.Drawing.Point(-1, 209);
-            this.btnNewGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNewGame.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewGame.Name = "btnNewGame";
             this.btnNewGame.Size = new System.Drawing.Size(139, 59);
             this.btnNewGame.TabIndex = 1;
@@ -196,7 +196,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(210)))), ((int)(((byte)(65)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(137, 2);
             this.panel1.TabIndex = 0;
@@ -206,7 +206,7 @@
             this.panelLibrary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLibrary.Location = new System.Drawing.Point(137, 54);
             this.panelLibrary.Name = "panelLibrary";
-            this.panelLibrary.Size = new System.Drawing.Size(975, 553);
+            this.panelLibrary.Size = new System.Drawing.Size(1025, 600);
             this.panelLibrary.TabIndex = 3;
             // 
             // dataGridViewImageColumn1
@@ -223,7 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1112, 607);
+            this.ClientSize = new System.Drawing.Size(1162, 654);
             this.Controls.Add(this.panelLibrary);
             this.Controls.Add(this.PanelAsideLeft);
             this.Controls.Add(this.HeaderPanel);

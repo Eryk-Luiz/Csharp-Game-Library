@@ -30,7 +30,7 @@ namespace Game_library
             //Cria um Table, faz a query e preenche o table com as informações.
             DataTable table = new DataTable();
 
-            string query = "SELECT * FROM Games ORDER BY DAT_GAME_INC DESC";
+            string query = "SELECT * FROM Games WHERE COD_USER_INC = " + "'"+ frmLogin.cod_user + "'" + "ORDER BY DAT_GAME_INC DESC";
 
             SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
             adapter.Fill(table);
@@ -146,7 +146,7 @@ namespace Game_library
 
             DataTable table = new DataTable();
 
-            string query = "SELECT * FROM Games WHERE GAME_GENRE ='" + genre + "'";
+            string query = "SELECT * FROM Games WHERE GAME_GENRE ='" + genre + "'" + "AND COD_USER_INC = '" + frmLogin.cod_user + "'";
             SqlCeDataAdapter adapter = new SqlCeDataAdapter(query, connection);
             adapter.Fill(table);
 
