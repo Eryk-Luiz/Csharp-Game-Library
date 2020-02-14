@@ -22,6 +22,7 @@ Biblioteca de jogos feita em C# (.Net Framework).
 - Programação fortemente tipada
 - Básico de Orientação à Obejetos
 - Básico de Relacionamentos e Modelagem de Banco de Dados SQL
+- Windows Forms
 
 <h2>Layout da Aplicação</h2>
 
