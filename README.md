@@ -21,7 +21,7 @@ Biblioteca de jogos feita em C# (.Net Framework).
 - Lógica de programação
 - Programação fortemente tipada
 - Básico de Orientação à Obejetos
-- Básico de Telacionamentos e Modelagem de Banco de Dados SQL
+- Básico de Relacionamentos e Modelagem de Banco de Dados SQL
 
 <h2>Layout da Aplicação</h2>
 
