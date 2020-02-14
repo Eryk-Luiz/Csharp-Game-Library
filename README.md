@@ -26,7 +26,7 @@ Biblioteca de jogos feita em C# (.Net Framework).
 <h2>Layout da Aplicação</h2>
 
 
-<h3>Tela principal onde temos todas nossos Jogos adicionados e podemos inicialos pela própria aplicação</h3>
+<h3>Tela principal onde temos todos os Jogos que adicionamos e podemos inicia-los pela própria aplicação</h3>
 <img src="images/Library.png" width="900">
 
 
