@@ -19,7 +19,6 @@ Biblioteca de jogos feita em C# (.Net Framework).
 <h2>Conhecimentos adiquiridos com o Projeto</h2>
 
 - Lógica de programação
-- Programação fortemente tipada
 - Básico de Orientação à Obejetos
 - Básico de Relacionamentos e Modelagem de Banco de Dados SQL
 - Windows Forms
